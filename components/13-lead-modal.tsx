@@ -4,6 +4,7 @@ import { useState, createContext, useContext, useCallback } from "react"
 import { X, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
 import { WhatsAppIcon } from "@/components/icons"
 
 interface LeadModalContextType {
@@ -38,19 +39,21 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
   const [name, setName] = useState("")
   const [whatsapp, setWhatsapp] = useState("")
+  const [consentChecked, setConsentChecked] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [errors, setErrors] = useState<{ name?: string; whatsapp?: string }>({})
+  const [errors, setErrors] = useState<{ name?: string; whatsapp?: string; consent?: string }>({})
 
   const openModal = useCallback(() => setIsOpen(true), [])
   const closeModal = useCallback(() => {
     setIsOpen(false)
     setName("")
     setWhatsapp("")
+    setConsentChecked(true)
     setErrors({})
   }, [])
 
   const validateForm = () => {
-    const newErrors: { name?: string; whatsapp?: string } = {}
+    const newErrors: { name?: string; whatsapp?: string; consent?: string } = {}
     
     if (!name.trim()) {
       newErrors.name = "Por favor, informe seu nome"
@@ -61,6 +64,10 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
       newErrors.whatsapp = "Por favor, informe seu WhatsApp"
     } else if (cleanNumber.length < 10 || cleanNumber.length > 11) {
       newErrors.whatsapp = "WhatsApp inválido"
+    }
+
+    if (!consentChecked) {
+      newErrors.consent = "Você precisa autorizar o uso dos dados para continuar"
     }
     
     setErrors(newErrors)
@@ -197,6 +204,33 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
                     <p className="text-sm text-destructive">{errors.whatsapp}</p>
                   )}
                 </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 rounded-xl bg-muted/50 px-3 py-2.5">
+                    <Checkbox
+                      id="modal-consent"
+                      checked={consentChecked}
+                      onCheckedChange={(checked) => {
+                        const isChecked = checked === true
+                        setConsentChecked(isChecked)
+                        if (isChecked && errors.consent) {
+                          setErrors((prev) => ({ ...prev, consent: undefined }))
+                        }
+                      }}
+                      disabled={isSubmitting}
+                      className="mt-0.5 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+                    />
+                    <label
+                      htmlFor="modal-consent"
+                      className="cursor-pointer text-sm leading-relaxed text-muted-foreground"
+                    >
+                      Autorizo o uso dos meus dados para contato, conforme os termos de privacidade.
+                    </label>
+                  </div>
+                  {errors.consent && (
+                    <p className="text-sm text-destructive">{errors.consent}</p>
+                  )}
+                </div>
                 
                 <Button
                   type="submit"
@@ -218,9 +252,6 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
                   )}
                 </Button>
                 
-                <p className="text-xs text-muted-foreground text-center leading-relaxed pt-2">
-                  Seus dados estão seguros e serão usados apenas para este contato.
-                </p>
               </form>
             </div>
           </div>
