@@ -59,8 +59,8 @@ export function TomographySpotlight() {
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tomografo-odontologico.png-EBleeiL5jrWVYEhLpmv3gGpcTjaFRo.jpeg"
-                alt="Tomógrafo odontológico Cone Beam - RX Digital"
+                src="/PHOTO-2026-04-06-18-23-11.jpg"
+                alt="Exame de tomografia Cone Beam em andamento na RX Digital"
                 width={800}
                 height={600}
                 className="w-full h-auto object-cover"

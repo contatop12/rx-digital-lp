@@ -23,7 +23,7 @@ export function About() {
               {/* Main image */}
               <div className="relative bg-background rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jessica-arcoverde-cirurgia-dentista-radiologista-f4wlSkkx6besNRxklB4mTSerjagcOg.png"
+                  src="/PHOTO-2026-04-06-18-23-14 10.jpg"
                   alt="Dra. Jéssica Arcoverde Lara - Cirurgiã-Dentista Radiologista"
                   width={400}
                   height={500}

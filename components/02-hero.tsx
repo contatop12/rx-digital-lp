@@ -22,8 +22,8 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Background image */}
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tomografo-odontologico.png-EBleeiL5jrWVYEhLpmv3gGpcTjaFRo.jpeg"
-          alt="Tomógrafo odontológico RX Digital"
+          src="/radiologia-odontologica-maraba.jpg"
+          alt="Profissional em estação de radiologia odontológica da RX Digital em Marabá"
           fill
           className="object-cover"
           priority
