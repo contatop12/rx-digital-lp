@@ -84,12 +84,6 @@ const serviceCategories = [
         indications: ["Próteses digitais", "Alinhadores transparentes", "CAD/CAM"],
         image: "/exames_e_servicos/Scanner e Entrega Digital.webp",
       },
-      {
-        title: "Suporte para Dentistas Parceiros",
-        description: "Atendimento prioritário, laudos especializados e agilidade na entrega para profissionais parceiros.",
-        indications: ["Clínicas parceiras", "Dentistas da região", "Casos complexos"],
-        image: "/exames_e_servicos/Suporte para Dentistas Parceiros.webp",
-      },
     ],
   },
 ]
@@ -154,8 +148,12 @@ export function Services() {
                       {service.image && (
                         <div className="mb-4 overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
                           <div className="relative aspect-video w-full">
+                            {/**
+                             * Arquivos com '+' no nome podem falhar em alguns ambientes
+                             * se o caractere não for codificado explicitamente.
+                             */}
                             <Image
-                              src={encodeURI(service.image)}
+                              src={encodeURI(service.image).replace(/\+/g, "%2B")}
                               alt={`Imagem do serviço ${service.title}`}
                               fill
                               className="object-cover"

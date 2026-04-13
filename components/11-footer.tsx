@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Phone, Instagram } from "lucide-react"
+import { MapPin, Instagram } from "lucide-react"
+import { WhatsAppIcon } from "@/components/icons"
 
 const units = [
   {
@@ -22,6 +23,13 @@ const units = [
 const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/_rxdigital/", label: "Instagram" },
 ]
+
+const contactWhatsAppLinks = {
+  novoHorizonte:
+    "https://wa.me/5594991608181?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20unidade%20Novo%20Horizonte.",
+  novaMaraba:
+    "https://wa.me/5594991558181?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20unidade%20Nova%20Marab%C3%A1.",
+}
 
 const mapUnits = [
   {
@@ -88,20 +96,24 @@ export function Footer() {
                   <span>Disponivel Turmografia</span>
                 </p>
                 <a 
-                  href="tel:+5594991608181" 
+                  href={contactWhatsAppLinks.novoHorizonte}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-background/70 hover:text-white transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
+                  <WhatsAppIcon className="size-4!" />
                   <span className="text-sm">(94) 99160-8181</span>
                 </a>
               </div>
               <div>
                 <p className="text-xs text-background/50 mb-1">Nova Marabá</p>
                 <a 
-                  href="tel:+5594991558181" 
+                  href={contactWhatsAppLinks.novaMaraba}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-background/70 hover:text-white transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
+                  <WhatsAppIcon className="size-4!" />
                   <span className="text-sm">(94) 99155-8181</span>
                 </a>
               </div>
@@ -181,7 +193,7 @@ export function Footer() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3 text-foreground">
-                  <p className="text-xs sm:text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm font-bold text-foreground">
                     {unit.name}
                   </p>
                   <a
@@ -200,7 +212,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-background/10 mt-12 pt-8 space-y-6">
-          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-2 sm:gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
             <span className="text-sm text-background/60">Site desenvolvido por:</span>
             <a
               href="https://sites.p12digital.com.br/"
