@@ -30,7 +30,7 @@ export function Hero() {
           priority
         />
         {/* Green overlay with gradient - softer for better legibility */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f3d2e]/90 via-[#1a5240]/85 to-[#2d6a4f]/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f3d2e]/60 via-[#1a5240]/65 to-[#2d6a4f]/60" />
         {/* Subtle noise overlay */}
         <div 
           className="absolute inset-0 opacity-[0.03]" 

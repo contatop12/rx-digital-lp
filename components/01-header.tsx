@@ -99,7 +99,7 @@ export function Header() {
                     : "border-white/35 text-white hover:bg-white/12",
                 )}
               >
-                <a href={PHONE_LINK}>Ligar agora - (94) 99160-8181</a>
+                <a href={PHONE_LINK}>Ligar agora</a>
               </Button>
             ) : null}
             <Button
@@ -155,7 +155,7 @@ export function Header() {
                       variant="outline"
                       className="w-full rounded-full border-2"
                     >
-                      <a href={PHONE_LINK}>Ligar agora - (94) 99160-8181</a>
+                      <a href={PHONE_LINK}>Ligar agora</a>
                     </Button>
                   ) : null}
                   <Button
