@@ -18,7 +18,6 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
-      <PartnerSupport />
       <FeedCarousel />
       <WhyRxDigital />
       <Reviews />
