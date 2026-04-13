@@ -23,18 +23,18 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/_rxdigital/", label: "Instagram" },
 ]
 
-const mapAddresses = [
-  "RX Digital Unidade Novo Horizonte, Av. Tocantins, 611 - B - Novo Horizonte, Marabá - PA, 68503-660",
-  "RX Digital Unidade Nova Marabá - Shopping Verdes Mares, Folha 27 quadra especial - Nova Marabá, Marabá - PA, 68509-100",
+const mapUnits = [
+  {
+    name: "Unidade Novo Horizonte",
+    query:
+      "RX Digital Unidade Novo Horizonte, Av. Tocantins, 611 - B - Novo Horizonte, Marabá - PA, 68503-660",
+  },
+  {
+    name: "Unidade Nova Marabá - Shopping Verdes Mares",
+    query:
+      "RX Digital Unidade Nova Marabá - Shopping Verdes Mares, Folha 27 quadra especial - Nova Marabá, Marabá - PA, 68509-100",
+  },
 ]
-
-const [originAddress, destinationAddress] = mapAddresses
-const mapsEmbedUrl = `https://www.google.com/maps?output=embed&saddr=${encodeURIComponent(
-  originAddress,
-)}&daddr=${encodeURIComponent(destinationAddress)}`
-const mapsOpenUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(
-  originAddress,
-)}&destination=${encodeURIComponent(destinationAddress)}`
 
 export function Footer() {
   return (
@@ -161,29 +161,41 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10">
-          <div className="overflow-hidden rounded-2xl border border-background/15 bg-background">
-            <iframe
-              title="Mapa com as duas unidades da RX Digital"
-              src={mapsEmbedUrl}
-              className="h-64 w-full sm:h-72 lg:h-80"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3 text-foreground">
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Visualize as duas unidades no mapa e escolha a mais conveniente.
-              </p>
-              <a
-                href={mapsOpenUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 text-sm font-medium text-primary hover:opacity-90 transition-opacity"
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {mapUnits.map((unit) => {
+            const embedUrl = `https://www.google.com/maps?output=embed&q=${encodeURIComponent(unit.query)}`
+            const openUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              unit.query,
+            )}`
+
+            return (
+              <div
+                key={unit.name}
+                className="overflow-hidden rounded-2xl border border-background/15 bg-background"
               >
-                Abrir no Maps
-              </a>
-            </div>
-          </div>
+                <iframe
+                  title={`Mapa da ${unit.name}`}
+                  src={embedUrl}
+                  className="h-64 w-full sm:h-72"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3 text-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {unit.name}
+                  </p>
+                  <a
+                    href={openUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 text-sm font-medium text-primary hover:opacity-90 transition-opacity"
+                  >
+                    Abrir no Maps
+                  </a>
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         {/* Bottom Bar */}

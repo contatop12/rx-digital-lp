@@ -21,7 +21,6 @@ export function TomographySpotlight() {
     <section id="tomografia" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
           <div className="order-2 lg:order-1">
             <span className="inline-block text-sm font-medium text-primary mb-4 uppercase tracking-wider">
               Tecnologia de ponta
@@ -30,15 +29,15 @@ export function TomographySpotlight() {
               Tomografia Computadorizada Cone Beam (CBCT)
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              A tomografia de feixe cônico oferece imagens tridimensionais detalhadas das estruturas 
-              bucais e maxilofaciais. Essencial para planejamento de implantes, avaliação de lesões, 
+              A tomografia de feixe cônico oferece imagens tridimensionais detalhadas das estruturas
+              bucais e maxilofaciais. Essencial para planejamento de implantes, avaliação de lesões,
               cirurgias ortognáticas e diagnósticos complexos.
             </p>
-            
+
             <ul className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                   <span className="text-foreground">{benefit}</span>
                 </li>
               ))}
@@ -48,14 +47,13 @@ export function TomographySpotlight() {
               onClick={openModal}
               variant="whatsapp"
               size="lg"
-              className="gap-2 [&_svg]:!size-5"
+              className="gap-2 [&_svg]:size-5!"
             >
               <WhatsAppIcon />
               Agendar tomografia
             </Button>
           </div>
 
-          {/* Image */}
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
@@ -65,10 +63,8 @@ export function TomographySpotlight() {
                 height={600}
                 className="w-full h-auto object-cover"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent" />
             </div>
-            {/* Decorative element */}
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-2xl -z-10" />
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/10 rounded-2xl -z-10" />
           </div>

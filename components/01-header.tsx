@@ -13,8 +13,8 @@ import { isWithinBusinessHours } from "@/lib/business-hours"
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#unidades", label: "Unidades" },
   { href: "#dra-jessica", label: "Dra. Jéssica" },
+  { href: "#unidades", label: "Unidades" },
   { href: "#faq", label: "FAQ" },
 ]
 
@@ -57,7 +57,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="shrink-0">
             <Image
               src={isScrolled 
                 ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rx-digital-escuro-fundo-transparente-UjnXFG9TyQcIed13I6ojYt6Ue4oTTl.png"
@@ -107,7 +107,7 @@ export function Header() {
               onClick={openModal}
               className="gap-2"
             >
-              <WhatsAppIcon className="!size-[1.1rem]" />
+              <WhatsAppIcon className="size-[1.1rem]!" />
               WhatsApp
             </Button>
           </div>
@@ -166,7 +166,7 @@ export function Header() {
                     variant="whatsappOutline"
                     className="w-full gap-2"
                   >
-                    <WhatsAppIcon className="!size-5" />
+                    <WhatsAppIcon className="size-5!" />
                     WhatsApp
                   </Button>
                 </div>

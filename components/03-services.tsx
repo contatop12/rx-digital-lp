@@ -88,6 +88,7 @@ const serviceCategories = [
         title: "Suporte para Dentistas Parceiros",
         description: "Atendimento prioritário, laudos especializados e agilidade na entrega para profissionais parceiros.",
         indications: ["Clínicas parceiras", "Dentistas da região", "Casos complexos"],
+        image: "/exames_e_servicos/Suporte para Dentistas Parceiros.webp",
       },
     ],
   },
@@ -154,7 +155,7 @@ export function Services() {
                         <div className="mb-4 overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
                           <div className="relative aspect-video w-full">
                             <Image
-                              src={service.image}
+                              src={encodeURI(service.image)}
                               alt={`Imagem do serviço ${service.title}`}
                               fill
                               className="object-cover"
