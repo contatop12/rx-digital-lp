@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { 
   Box, 
   Scan, 
@@ -24,11 +25,13 @@ const serviceCategories = [
         title: "Tomografia Computadorizada (Cone Beam / CBCT)",
         description: "Imagens 3D de alta resolução para diagnósticos precisos e planejamento de tratamentos complexos.",
         indications: ["Planejamento de implantes", "Avaliação de lesões", "Cirurgias bucomaxilofaciais"],
+        image: "/exames_e_servicos/Tomografia Computadorizada (Cone Beam  CBCT).webp",
       },
       {
         title: "Arquivos 3D e Impressão 3D",
         description: "Biomodelos e planejamento cirúrgico com tecnologia de impressão 3D para maior precisão nos procedimentos.",
         indications: ["Planejamento cirúrgico", "Próteses personalizadas", "Estudo anatômico"],
+        image: "/exames_e_servicos/Arquivos 3D e Impressão 3D.webp",
       },
     ],
   },
@@ -41,11 +44,13 @@ const serviceCategories = [
         title: "Radiografia Panorâmica",
         description: "Visão completa de toda a arcada dentária, maxilares e estruturas adjacentes em uma única imagem.",
         indications: ["Avaliação geral", "Planejamento ortodôntico", "Detecção de cáries e lesões"],
+        image: "/exames_e_servicos/Radiografia Panorâmica (Raio x).webp",
       },
       {
         title: "Radiografia Periapical",
         description: "Imagem detalhada de dentes específicos, raízes e osso circundante para diagnósticos precisos.",
         indications: ["Tratamento de canal", "Avaliação de raízes", "Diagnóstico de abscessos"],
+        image: "/exames_e_servicos/Radiografia Periapical (Raio x).webp",
       },
     ],
   },
@@ -58,11 +63,13 @@ const serviceCategories = [
         title: "Documentação Ortodôntica Completa",
         description: "Pacote completo com todas as radiografias, fotos e análises necessárias para o tratamento ortodôntico.",
         indications: ["Início de tratamento ortodôntico", "Planejamento de aparelho", "Controle de tratamento"],
+        image: "/exames_e_servicos/Documentação Ortodôntica Completa.webp",
       },
       {
         title: "Telerradiografia + Traçado Cefalométrico",
         description: "Análise lateral do crânio com traçado digital para planejamento ortodôntico e cirúrgico.",
         indications: ["Análise facial", "Planejamento ortodôntico", "Cirurgia ortognática"],
+        image: "/exames_e_servicos/Telerradiografia + Traçado Cefalométrico.webp",
       },
     ],
   },
@@ -75,6 +82,7 @@ const serviceCategories = [
         title: "Scanner e Entrega Digital",
         description: "Escaneamento intraoral e entrega de arquivos digitais para agilizar o fluxo de trabalho do consultório.",
         indications: ["Próteses digitais", "Alinhadores transparentes", "CAD/CAM"],
+        image: "/exames_e_servicos/Scanner e Entrega Digital.webp",
       },
       {
         title: "Suporte para Dentistas Parceiros",
@@ -142,6 +150,19 @@ export function Services() {
                       </div>
                     </CardHeader>
                     <CardContent>
+                      {service.image && (
+                        <div className="mb-4 overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
+                          <div className="relative aspect-video w-full">
+                            <Image
+                              src={service.image}
+                              alt={`Imagem do serviço ${service.title}`}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                          </div>
+                        </div>
+                      )}
                       <div className="mb-4">
                         <p className="text-sm font-medium text-foreground mb-2">Indicado para:</p>
                         <div className="flex flex-wrap gap-2">
@@ -160,9 +181,9 @@ export function Services() {
                         variant="outline"
                         className="w-full rounded-full border-2 transition-colors duration-200 group-hover:border-[#25D366] group-hover:bg-[#25D366] group-hover:text-white group-hover:shadow-md group-hover:shadow-[#25D366]/25"
                       >
-                        <WhatsAppIcon className="!size-4 opacity-90 group-hover:text-white" />
+                        <WhatsAppIcon className="size-4! opacity-90 group-hover:text-white" />
                         Agendar este exame
-                        <ChevronRight className="!size-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+                        <ChevronRight className="size-4! opacity-80 group-hover:translate-x-0.5 transition-transform" />
                       </Button>
                     </CardContent>
                   </Card>

@@ -13,17 +13,17 @@ export function About() {
   return (
     <section id="dra-jessica" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid gap-12 items-center lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
           {/* Image */}
           <div className="relative flex justify-center lg:justify-start">
             <div className="relative">
               {/* Background decoration */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl -rotate-3" />
+              <div className="absolute -inset-4 bg-linear-to-br from-primary/20 to-primary/10 rounded-3xl -rotate-3" />
               
               {/* Main image */}
               <div className="relative bg-background rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/PHOTO-2026-04-06-18-23-14 10.jpg"
+                  src="/carrossel/jessica_arcoverde_dentista.webp"
                   alt="Dra. Jéssica Arcoverde Lara - Cirurgiã-Dentista Radiologista"
                   width={400}
                   height={500}
@@ -80,7 +80,7 @@ export function About() {
                 onClick={openModal}
                 variant="whatsapp"
                 size="lg"
-                className="gap-2 [&_svg]:!size-5"
+                className="gap-2 [&_svg]:size-5!"
               >
                 <WhatsAppIcon />
                 Falar com a equipe e agendar

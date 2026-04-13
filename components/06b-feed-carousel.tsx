@@ -31,11 +31,11 @@ export function FeedCarousel() {
     <section id="carrossel-feed" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Casos e Bastidores
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+            Tecnologia de ponta com um olhar humano, do agendamento ao diagnóstico. Precisão, agilidade e acolhimento para o seu sorriso.
           </h2>
           <p className="text-lg text-muted-foreground">
-            Confira alguns registros do dia a dia da RX Digital.
+            Tudo sob a supervisão técnica da Dra. Jéssica Arcoverde Lara, garantindo excelência em radiologia odontológica com um atendimento personalizado para Marabá e região.
           </p>
         </div>
 

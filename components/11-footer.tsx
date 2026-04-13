@@ -23,11 +23,24 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/_rxdigital/", label: "Instagram" },
 ]
 
+const mapAddresses = [
+  "RX Digital Unidade Novo Horizonte, Av. Tocantins, 611 - B - Novo Horizonte, Marabá - PA, 68503-660",
+  "RX Digital Unidade Nova Marabá - Shopping Verdes Mares, Folha 27 quadra especial - Nova Marabá, Marabá - PA, 68509-100",
+]
+
+const [originAddress, destinationAddress] = mapAddresses
+const mapsEmbedUrl = `https://www.google.com/maps?output=embed&saddr=${encodeURIComponent(
+  originAddress,
+)}&daddr=${encodeURIComponent(destinationAddress)}`
+const mapsOpenUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(
+  originAddress,
+)}&destination=${encodeURIComponent(destinationAddress)}`
+
 export function Footer() {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo & About */}
           <div className="lg:col-span-1">
             <Image
@@ -48,7 +61,7 @@ export function Footer() {
             <div className="space-y-4">
               {units.map((unit, index) => (
                 <div key={index} className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-primary mt-1 shrink-0" />
                   <div>
                     <a
                       href={unit.mapLink}
@@ -131,6 +144,45 @@ export function Footer() {
                 FAQ
               </Link>
             </nav>
+          </div>
+
+          {/* Business Hours */}
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold text-background mb-4">Horários</h3>
+            <div className="space-y-2 text-sm">
+              <p className="text-background/70">Segunda-feira: 08:00-19:00</p>
+              <p className="text-background/70">Terça-feira: 08:00-19:00</p>
+              <p className="text-background/70">Quarta-feira: 08:00-19:00</p>
+              <p className="text-background/70">Quinta-feira: 08:00-19:00</p>
+              <p className="text-background/70">Sexta-feira: 08:00-19:00</p>
+              <p className="text-background/70">Sábado: 08:00-12:00</p>
+              <p className="text-background/70">Domingo: Fechado</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="overflow-hidden rounded-2xl border border-background/15 bg-background">
+            <iframe
+              title="Mapa com as duas unidades da RX Digital"
+              src={mapsEmbedUrl}
+              className="h-64 w-full sm:h-72 lg:h-80"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3 text-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                Visualize as duas unidades no mapa e escolha a mais conveniente.
+              </p>
+              <a
+                href={mapsOpenUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 text-sm font-medium text-primary hover:opacity-90 transition-opacity"
+              >
+                Abrir no Maps
+              </a>
+            </div>
           </div>
         </div>
 
