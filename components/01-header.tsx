@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
-import { cn } from "@/lib/utils"
 import { isWithinBusinessHours } from "@/lib/business-hours"
 
 const navLinks = [
@@ -89,20 +88,6 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            {showCallNowButton ? (
-              <Button
-                asChild
-                variant="ghost"
-                className={cn(
-                  "gap-2 rounded-full border shadow-none active:scale-100",
-                  isScrolled
-                    ? "border-border/80 text-foreground hover:bg-muted/60"
-                    : "border-white/35 text-white hover:bg-white/12",
-                )}
-              >
-                <a href={PHONE_LINK}>Ligar agora</a>
-              </Button>
-            ) : null}
             <Button
               variant={isScrolled ? "whatsappOutline" : "whatsappOnDark"}
               onClick={openModal}
