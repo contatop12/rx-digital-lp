@@ -26,8 +26,6 @@ const serviceCategories = [
         description: "Imagens 3D de alta resolução para diagnósticos precisos e planejamento de tratamentos complexos.",
         indications: ["Planejamento de implantes", "Avaliação de lesões", "Cirurgias bucomaxilofaciais"],
         image: "/exames_e_servicos/Tomografia Computadorizada (Cone Beam  CBCT).webp",
-        imageWidth: 800,
-        imageHeight: 450,
       },
       {
         title: "Arquivos 3D e Impressão 3D",
@@ -47,8 +45,6 @@ const serviceCategories = [
         description: "Visão completa de toda a arcada dentária, maxilares e estruturas adjacentes em uma única imagem.",
         indications: ["Avaliação geral", "Planejamento ortodôntico", "Detecção de cáries e lesões"],
         image: "/exames_e_servicos/radiografia-panoramica-maraba.webp",
-        imageWidth: 800,
-        imageHeight: 450,
       },
       {
         title: "Radiografia Periapical",
@@ -151,30 +147,20 @@ export function Services() {
                     <CardContent>
                       {service.image && (
                         <div className="mb-4 overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
-                          {/**
-                           * Arquivos com '+' no nome podem falhar em alguns ambientes
-                           * se o caractere não for codificado explicitamente.
-                           */}
-                          {service.imageWidth && service.imageHeight ? (
+                          <div className="relative aspect-video w-full">
+                            {/**
+                             * Arquivos com '+' no nome podem falhar em alguns ambientes
+                             * se o caractere não for codificado explicitamente.
+                             * aspect-video padroniza todas as imagens em 16:9 (800x450).
+                             */}
                             <Image
                               src={encodeURI(service.image).replace(/\+/g, "%2B")}
                               alt={`Imagem do serviço ${service.title}`}
-                              width={service.imageWidth}
-                              height={service.imageHeight}
-                              className="h-auto w-full object-cover"
+                              fill
+                              className="object-cover"
                               sizes="(max-width: 768px) 100vw, 50vw"
                             />
-                          ) : (
-                            <div className="relative aspect-video w-full">
-                              <Image
-                                src={encodeURI(service.image).replace(/\+/g, "%2B")}
-                                alt={`Imagem do serviço ${service.title}`}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                              />
-                            </div>
-                          )}
+                          </div>
                         </div>
                       )}
                       <div className="mb-4">
