@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -35,6 +36,7 @@ export function LeadForm({
   description = "Deixe seu contato e nossa equipe chamará você imediatamente no WhatsApp.",
   showLgpd = true
 }: LeadFormProps) {
+  const router = useRouter()
   const [name, setName] = useState("")
   const [whatsapp, setWhatsapp] = useState("")
   const [consentChecked, setConsentChecked] = useState(true)
@@ -104,12 +106,6 @@ export function LeadForm({
       }
     }
     
-    // Build WhatsApp message
-    const formattedPhone = formatWhatsApp(whatsapp)
-    const message = `Olá! Me chamo ${name.trim()}. Quero agendar um exame na RX Digital. Meu WhatsApp é ${formattedPhone}. Pode me ajudar com horários e valores?`
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/5594991608181?text=${encodedMessage}`
-    
     // Small delay for UX
     await new Promise(resolve => setTimeout(resolve, 500))
 
@@ -119,18 +115,16 @@ export function LeadForm({
       console.error("Erro ao enviar lead para webhook:", error)
     }
     
-    // Track WhatsApp open event
+    // Track redirect event
     if (typeof window !== "undefined") {
       const win = window as typeof window & { dataLayer?: unknown[] }
       if (win.dataLayer) {
-        win.dataLayer.push({ event: "whatsapp_open" })
+        win.dataLayer.push({ event: "lead_redirect_thank_you" })
       }
     }
-    
-    // Open WhatsApp
-    window.open(whatsappUrl, "_blank")
-    
+
     setIsSubmitting(false)
+    router.push("/obrigado")
   }
 
   const handleWhatsAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -196,13 +190,13 @@ export function LeadForm({
         type="submit"
         variant="whatsapp"
         size="xl"
-        className="w-full gap-2 font-semibold [&_svg]:!size-5"
+        className="w-full gap-2 font-semibold [&_svg]:size-5!"
         disabled={isSubmitting}
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="!size-5 animate-spin" />
-            Abrindo WhatsApp...
+            <Loader2 className="size-5! animate-spin" />
+            Enviando...
           </>
         ) : (
           <>
