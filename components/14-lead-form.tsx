@@ -116,7 +116,7 @@ export function LeadForm({
 
   const formContent = (
     <form
-      id={`gtm-lead-form-${variant}`}
+      id="lead-form"
       className="gtm-lead-form space-y-4"
       data-gtm-form="lead"
       onSubmit={handleSubmit}

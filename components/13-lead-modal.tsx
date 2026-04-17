@@ -167,7 +167,7 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
               </div>
               
               <form
-                id="gtm-lead-form-modal"
+                id="lead-form-modal"
                 className="gtm-lead-form space-y-4"
                 data-gtm-form="lead"
                 onSubmit={handleSubmit}
