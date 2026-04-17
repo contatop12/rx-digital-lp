@@ -15,6 +15,8 @@ interface LeadFormProps {
   showLgpd?: boolean
 }
 
+const LEAD_API_ENDPOINT = "/api/lead"
+
 function formatWhatsApp(value: string): string {
   const numbers = value.replace(/\D/g, "")
   if (numbers.length <= 2) return numbers
@@ -38,6 +40,32 @@ export function LeadForm({
   const [consentChecked, setConsentChecked] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState<{ name?: string; whatsapp?: string; consent?: string }>({})
+
+  const submitLeadWebhook = async () => {
+    const phone = cleanWhatsApp(whatsapp)
+    const payload = {
+      name: name.trim(),
+      whatsapp: phone,
+      whatsappFormatted: formatWhatsApp(phone),
+      consentGiven: showLgpd ? consentChecked : true,
+      source: "rx-digital-lp",
+      variant,
+      pageUrl: typeof window !== "undefined" ? window.location.href : "",
+      createdAt: new Date().toISOString(),
+    }
+
+    const response = await fetch(LEAD_API_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+
+    if (!response.ok) {
+      throw new Error("Falha ao enviar lead para webhook")
+    }
+  }
 
   const validateForm = () => {
     const newErrors: { name?: string; whatsapp?: string; consent?: string } = {}
@@ -84,6 +112,12 @@ export function LeadForm({
     
     // Small delay for UX
     await new Promise(resolve => setTimeout(resolve, 500))
+
+    try {
+      await submitLeadWebhook()
+    } catch (error) {
+      console.error("Erro ao enviar lead para webhook:", error)
+    }
     
     // Track WhatsApp open event
     if (typeof window !== "undefined") {
