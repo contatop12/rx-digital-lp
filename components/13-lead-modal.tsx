@@ -17,6 +17,7 @@ interface LeadModalContextType {
 const LeadModalContext = createContext<LeadModalContextType | null>(null)
 const LEAD_API_ENDPOINT = "/api/lead"
 const N8N_WEBHOOK_URL = "https://n8n-webhook.axmxa0.easypanel.host/webhook/rx-digital-lp"
+const DEFAULT_DDI = "55"
 
 export function useLeadModal() {
   const context = useContext(LeadModalContext)
@@ -36,6 +37,17 @@ function formatWhatsApp(value: string): string {
 
 function cleanWhatsApp(value: string): string {
   return value.replace(/\D/g, "")
+}
+
+function withDdi(value: string): string {
+  const digits = cleanWhatsApp(value)
+  if (!digits) return ""
+
+  if (digits.startsWith(DEFAULT_DDI) && (digits.length === 12 || digits.length === 13)) {
+    return digits
+  }
+
+  return `${DEFAULT_DDI}${digits}`
 }
 
 export function LeadModalProvider({ children }: { children: React.ReactNode }) {
@@ -79,11 +91,16 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
   }
 
   const buildLeadPayload = () => {
-    const phone = cleanWhatsApp(whatsapp)
+    const phoneLocal = cleanWhatsApp(whatsapp)
+    const phoneWithDdi = withDdi(phoneLocal)
+
     return {
       name: name.trim(),
-      whatsapp: phone,
-      whatsappFormatted: formatWhatsApp(phone),
+      whatsapp: phoneWithDdi,
+      whatsappLocal: phoneLocal,
+      ddi: DEFAULT_DDI,
+      whatsappFormatted: formatWhatsApp(phoneLocal),
+      whatsappFormattedWithDdi: `+${DEFAULT_DDI} ${formatWhatsApp(phoneLocal)}`,
       consentGiven: consentChecked,
       source: "rx-digital-lp",
       variant: "modal",
