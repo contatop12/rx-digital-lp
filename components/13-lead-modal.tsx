@@ -18,7 +18,7 @@ const LeadModalContext = createContext<LeadModalContextType | null>(null)
 const LEAD_API_ENDPOINT = "/api/lead"
 const WEBHOOK_URLS = [
   "https://n8n-webhook.axmxa0.easypanel.host/webhook/rx-digital-lp",
-  "https://python-auto-relatorio-trafego.axmxa0.easypanel.host/meta-new-lead",
+  "https://python-auto-relatorio-trafego.axmxa0.easypanel.host/site-new-lead",
 ]
 const DEFAULT_DDI = "55"
 const FORM_ID = "Rx Digital"
@@ -131,23 +131,14 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
   }
 
   const buildLeadPayload = () => {
-    const phoneLocal = cleanWhatsApp(whatsapp)
-    const phoneWithDdi = withDdi(phoneLocal)
+    const phoneWithDdi = withDdi(whatsapp)
 
     return {
       form_id: FORM_ID,
       codi_id: CODI_ID,
       name: name.trim(),
-      whatsapp: phoneWithDdi,
-      whatsappLocal: phoneLocal,
-      ddi: DEFAULT_DDI,
-      whatsappFormatted: formatWhatsApp(phoneLocal),
-      whatsappFormattedWithDdi: `+${DEFAULT_DDI} ${formatWhatsApp(phoneLocal)}`,
-      consentGiven: consentChecked,
-      source: "rx-digital-lp",
-      variant: "modal",
+      phone: phoneWithDdi,
       ...utms,
-      pageUrl: typeof window !== "undefined" ? window.location.href : "",
       createdAt: new Date().toISOString(),
     }
   }
