@@ -219,7 +219,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-sm ring-offset-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              aria-label="P12 Digital — abrir site"
+              aria-label="Abrir o site da P12 Digital"
             >
               <Image
                 src="/logotipo_p12.png"

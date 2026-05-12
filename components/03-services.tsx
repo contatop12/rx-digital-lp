@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { 
   Box, 
   Scan, 
@@ -45,6 +46,7 @@ const serviceCategories = [
         description: "Visão completa de toda a arcada dentária, maxilares e estruturas adjacentes em uma única imagem.",
         indications: ["Avaliação geral", "Planejamento ortodôntico", "Detecção de cáries e lesões"],
         image: "/exames_e_servicos/radiografia-panoramica-maraba.webp",
+        detailHref: "/servicos/radiografia-panoramica",
       },
       {
         title: "Radiografia Periapical",
@@ -136,7 +138,16 @@ export function Services() {
                         </div>
                         <div className="flex-1">
                           <CardTitle className="text-lg font-semibold text-foreground mb-2">
-                            {service.title}
+                            {"detailHref" in service && service.detailHref ? (
+                              <Link
+                                href={service.detailHref}
+                                className="transition-colors hover:text-accent hover:underline underline-offset-4"
+                              >
+                                {service.title}
+                              </Link>
+                            ) : (
+                              service.title
+                            )}
                           </CardTitle>
                           <CardDescription className="text-muted-foreground leading-relaxed">
                             {service.description}

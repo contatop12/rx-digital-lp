@@ -10,6 +10,8 @@ import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
 import { isWithinBusinessHours } from "@/lib/business-hours"
 
+import { usePathname } from "next/navigation"
+
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#dra-jessica", label: "Dra. Jéssica" },
@@ -18,10 +20,18 @@ const navLinks = [
   { href: "#faq", label: "FAQ" },
 ]
 
+function resolveNavHref(href: string, pathname: string | null) {
+  if (pathname && pathname !== "/" && href.startsWith("#")) {
+    return `/${href}`
+  }
+  return href
+}
+
 const WHATSAPP_LINK = "https://wa.me/5594991608181?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20exame%20na%20RX%20Digital."
 const PHONE_LINK = "tel:+5594991608181"
 
 export function Header() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [showCallNowButton, setShowCallNowButton] = useState(false)
@@ -76,7 +86,7 @@ export function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={resolveNavHref(link.href, pathname)}
                 className={`text-sm font-medium transition-colors hover:text-accent ${
                   isScrolled ? "text-foreground" : "text-white"
                 }`}
@@ -126,7 +136,7 @@ export function Header() {
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
-                      href={link.href}
+                      href={resolveNavHref(link.href, pathname)}
                       onClick={() => setIsOpen(false)}
                       className="text-lg font-medium text-foreground hover:text-accent transition-colors py-2"
                     >
