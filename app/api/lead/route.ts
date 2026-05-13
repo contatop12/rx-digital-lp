@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 
 const WEBHOOK_URLS = [
   "https://n8n-webhook.axmxa0.easypanel.host/webhook/rx-digital-lp",
+  "https://python-auto-relatorio-trafego.axmxa0.easypanel.host/site-new-lead",
 ]
 
 export async function POST(req: Request) {
