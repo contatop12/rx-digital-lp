@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { 
   Cpu, 
   Zap, 
@@ -9,6 +10,7 @@ import {
   Shield
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { getServiceHref } from "@/lib/services"
 
 const reasons = [
   {
@@ -53,7 +55,19 @@ export function WhyRxDigital() {
             Por que a RX Digital?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Combinamos tecnologia avançada com atendimento humanizado para oferecer a melhor experiência em radiologia odontológica.
+            Combinamos{" "}
+            <Link href={getServiceHref("tomografia-cone-beam")} className="text-primary underline-offset-4 hover:underline">
+              tomografia dentária
+            </Link>
+            ,{" "}
+            <Link href={getServiceHref("radiografia-panoramica")} className="text-primary underline-offset-4 hover:underline">
+              raio x panorâmico
+            </Link>{" "}
+            e{" "}
+            <Link href={getServiceHref("documentacao-ortodontica")} className="text-primary underline-offset-4 hover:underline">
+              documentação ortodôntica
+            </Link>{" "}
+            com atendimento humanizado para oferecer a melhor experiência em radiologia odontológica.
           </p>
         </div>
 

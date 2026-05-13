@@ -11,10 +11,12 @@ import { FinalCTA } from "@/components/10-final-cta"
 import { Footer } from "@/components/11-footer"
 import { FloatingWhatsApp } from "@/components/12-floating-whatsapp"
 import { PartnerSupport } from "@/components/17-partner-support"
+import { LocalBusinessSchema } from "@/components/23-local-business-schema"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema />
       <Header />
       <Hero />
       <Services />
