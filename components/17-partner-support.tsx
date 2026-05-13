@@ -1,23 +1,22 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { CheckCircle2, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { WhatsAppIcon } from "@/components/icons"
-
-const partnerMessage =
-  "Olá! Sou dentista e fiquei interessado(a) em conhecer a estrutura da RX Digital. Gostaria de agendar uma visita para avaliar uma possível parceria."
-
-const partnerWhatsappLink = `https://wa.me/5594991608181?text=${encodeURIComponent(partnerMessage)}`
+import { useLeadModal } from "./13-lead-modal"
+import { getServiceHref } from "@/lib/services"
 
 const partnerTags = [
   "Clínicas parceiras",
   "Dentistas da região",
   "Casos complexos",
-  "Ortodontia & Implantes",
+  "Ortodontia e Implantes",
 ]
 
 export function PartnerSupport() {
+  const { openModal } = useLeadModal()
+
   return (
     <section id="parcerias" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
@@ -25,14 +24,26 @@ export function PartnerSupport() {
           <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="order-2 space-y-5 lg:order-1">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Suporte para Dentistas Parceiros
+                Dentista? Seja parceiro da RX Digital.
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Seja parceiro da RX Digital e ofereça aos seus pacientes laudos precisos, tecnologia de ponta e agilidade na entrega. Atendimento prioritário para você e sua clínica.
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Oferecemos atendimento prioritário para clínicas parceiras, com entrega de laudos e arquivos digitais
+                pelo WhatsApp no mesmo dia. Tomografia Cone Beam,{" "}
+                <Link href={getServiceHref("scanner-intraoral")} className="text-primary underline-offset-4 hover:underline">
+                  scanner intraoral
+                </Link>
+                ,{" "}
+                <Link
+                  href={getServiceHref("impressao-3d-odontologica")}
+                  className="text-primary underline-offset-4 hover:underline"
+                >
+                  impressão 3D odontológica
+                </Link>{" "}
+                e toda a documentação ortodôntica para os seus pacientes.
               </p>
 
               <div>
-                <p className="text-sm font-medium text-foreground mb-3">Indicado para:</p>
+                <p className="mb-3 text-sm font-medium text-foreground">Indicado para:</p>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {partnerTags.map((tag) => (
                     <div
@@ -47,15 +58,12 @@ export function PartnerSupport() {
               </div>
 
               <Button
-                asChild
+                onClick={openModal}
                 variant="outline"
                 className="w-full rounded-full border-2 transition-colors duration-200 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-md hover:shadow-[#25D366]/25 sm:w-fit"
               >
-                <a href={partnerWhatsappLink} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="size-4!" />
-                  Conheça a nossa estrutura
-                  <ChevronRight className="size-4!" />
-                </a>
+                Quero ser parceiro
+                <ChevronRight className="size-4!" />
               </Button>
             </div>
 
