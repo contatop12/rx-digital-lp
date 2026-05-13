@@ -1,4 +1,6 @@
 import type { ExamStep } from "@/components/19-exam-stepper"
+import type { ComparisonColumn, ComparisonRow } from "@/components/20-comparison-table"
+import { getServiceHref } from "@/lib/services"
 
 export type PanoramicaTrustIcon = "cpu" | "clock" | "messageCircle" | "shield"
 
@@ -6,68 +8,124 @@ export const panoramicaTrustBadges: { icon: PanoramicaTrustIcon; text: string }[
   { icon: "cpu", text: "Exame 100% digital" },
   { icon: "clock", text: "Resultado no mesmo dia" },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
-  { icon: "shield", text: "Laudo especializado" },
+  { icon: "shield", text: "Sem necessidade de preparo" },
 ]
 
 export const panoramicaIndications: { emoji: string; title: string; description: string }[] = [
-  { emoji: "🦷", title: "Planejamento ortodôntico", description: "Base para aparelhos e alinhadores" },
-  { emoji: "🔩", title: "Implantes dentários", description: "Avaliação do osso disponível" },
-  { emoji: "🦴", title: "Cirurgias e extrações", description: "Incluindo sisos (terceiros molares)" },
-  { emoji: "🔍", title: "Diagnóstico de lesões", description: "Cistos, tumores, infecções e avaliação da articulação da mandíbula (ATM)" },
-  { emoji: "👶", title: "Acompanhamento infantil", description: "Desenvolvimento da dentição" },
-  { emoji: "🦷", title: "Check-up geral", description: "Avaliação preventiva completa" },
-]
-
-export const panoramicaExamSteps: ExamStep[] = [
-  { title: "Agendamento", description: "Pelo WhatsApp, sem burocracia" },
-  { title: "Chegada", description: "Sem necessidade de preparo especial" },
-  { title: "Exame", description: "Duração de apenas 3 a 5 minutos" },
-  { title: "Resultado", description: "Entregue digitalmente no mesmo dia" },
   {
-    title: "Laudo",
-    description:
-      "Assinado pela Dra. Jéssica Arcoverde Lara, especialista em Radiologia Odontológica",
+    emoji: "🦷",
+    title: "Avaliação de rotina",
+    description: "Visão geral da saúde bucal para acompanhamento periódico pelo dentista",
+  },
+  {
+    emoji: "📋",
+    title: "Início de tratamento ortodôntico",
+    description: "Base para planejamento de aparelhos e alinhadores",
+  },
+  {
+    emoji: "🔩",
+    title: "Planejamento de implantes",
+    description: "Avaliação do osso disponível antes da cirurgia de implante",
+  },
+  {
+    emoji: "🦷",
+    title: "Extração de sisos",
+    description: "Verificação da posição dos dentes do siso antes da extração",
+  },
+  {
+    emoji: "🦴",
+    title: "Avaliação de seios da face",
+    description: "Identificação de alterações nos seios maxilares",
+  },
+  {
+    emoji: "🔄",
+    title: "Acompanhamento de tratamentos",
+    description: "Monitoramento da evolução de casos em andamento",
   },
 ]
 
+export const panoramicaExamSteps: ExamStep[] = [
+  { title: "Agendamento", description: "Pelo formulário no site, com ou sem pedido do dentista" },
+  { title: "Chegada", description: "Sem necessidade de preparo especial" },
+  {
+    title: "Posicionamento",
+    description: "O paciente é posicionado no equipamento de forma rápida e confortável",
+  },
+  {
+    title: "Captura",
+    description: "O aparelho realiza uma rotação ao redor da cabeça capturando a arcada completa em segundos",
+  },
+  {
+    title: "Processamento",
+    description: "A imagem digital é gerada automaticamente pelo software do equipamento",
+  },
+  { title: "Entrega", description: "Arquivo digital enviado pelo WhatsApp no mesmo dia" },
+]
+
 export const panoramicaDiferenciais: string[] = [
-  "Equipamento digital de última geração",
-  "Imagem de alta resolução para diagnóstico preciso",
-  "Resultado entregue pelo WhatsApp no mesmo dia",
-  "Laudo especializado pela Dra. Jéssica (CRO-PA CD-7626)",
-  "Atendimento humanizado e sem filas",
-  "Duas unidades em Marabá: Novo Horizonte e Shopping Verdes Mares",
+  "Equipamento digital de última geração com alta resolução",
+  "Resultado entregue no mesmo dia pelo WhatsApp",
+  "Sem necessidade de preparo especial",
+  "Atendimento sem filas e com hora marcada",
+  "Atendimento humanizado e ágil nas duas unidades em Marabá",
   "Referência para dentistas de mais de 20 cidades da região",
+  "Integração com os demais exames da RX Digital para documentação completa",
+]
+
+export const panoramicaComparisonColumns: ComparisonColumn[] = [
+  { key: "periapical", label: "Raio X Periapical", href: getServiceHref("radiografia-periapical") },
+  { key: "panoramica", label: "Raio X Panorâmico" },
+]
+
+export const panoramicaComparisonRows: ComparisonRow[] = [
+  { label: "Área visualizada", values: { periapical: "1 a 3 dentes", panoramica: "Arcada completa" } },
+  { label: "Indicação principal", values: { periapical: "Diagnóstico localizado", panoramica: "Avaliação geral" } },
+  { label: "Uso em ortodontia", values: { periapical: "Não", panoramica: "Sim" } },
+  { label: "Planejamento de implantes", values: { periapical: "Parcial", panoramica: "Sim" } },
+  { label: "Avaliação de seios da face", values: { periapical: "Não", panoramica: "Sim" } },
+  { label: "Frequência de uso", values: { periapical: "Pontual", panoramica: "Rotina anual" } },
+  { label: "Resultado", values: { periapical: "Arquivo digital", panoramica: "Arquivo digital" } },
 ]
 
 export const panoramicaFaqs: { question: string; answer: string }[] = [
   {
-    question: "Quanto tempo dura o exame?",
+    question: "O que é o raio x panorâmico?",
     answer:
-      "O exame em si dura de 3 a 5 minutos. O tempo total na clínica, incluindo cadastro e posicionamento, é de aproximadamente 15 a 20 minutos.",
+      "O raio x panorâmico, também chamado de radiografia panorâmica, é um exame de imagem que captura toda a arcada dentária em uma única chapa digital. É o exame mais solicitado na odontologia, indicado para avaliações de rotina, ortodontia, implantes e muito mais.",
   },
   {
-    question: "Quando fico pronto o resultado?",
+    question: "Preciso de pedido do dentista?",
     answer:
-      "As imagens digitais são entregues no mesmo dia pelo WhatsApp. O laudo radiológico é emitido em até 24 horas.",
+      "Não é obrigatório. O paciente pode solicitar diretamente. Porém, se você tem indicação do seu dentista, traga a solicitação para que possamos registrar corretamente o exame.",
   },
   {
     question: "O exame tem radiação?",
     answer:
-      "Sim, como todo exame de raio-x, há exposição à radiação. Porém, a dose é muito baixa e considerada segura. Nossos equipamentos digitais reduzem a exposição em até 70% comparado a equipamentos convencionais.",
+      "Sim, como todo exame radiológico. Porém, a dose de radiação do raio x panorâmico é muito baixa e considerada segura para a maioria dos pacientes, incluindo crianças e adultos.",
   },
   {
-    question: "Gestantes podem fazer?",
+    question: "Quanto tempo dura o exame?",
     answer:
-      "Em casos de necessidade clínica, o exame pode ser realizado com proteção adequada. Informe sempre sobre a gravidez antes do exame para que nossa equipe tome os devidos cuidados.",
+      "O exame em si dura apenas alguns segundos. O tempo total na clínica, incluindo posicionamento e orientações, é de aproximadamente 10 a 15 minutos.",
   },
   {
-    question: "Aceita convênio?",
-    answer: "Consulte nossa equipe pelo WhatsApp para verificar as formas de pagamento disponíveis.",
+    question: "Quando fica pronto o resultado?",
+    answer: "O arquivo digital é entregue no mesmo dia pelo WhatsApp.",
+  },
+  {
+    question: "Preciso de algum preparo antes do exame?",
+    answer:
+      "Não. O raio x panorâmico não exige nenhum preparo especial. Basta retirar objetos metálicos da região da cabeça e pescoço antes do exame.",
+  },
+  {
+    question: "O exame está disponível em quais unidades?",
+    answer:
+      "O raio x panorâmico está disponível nas duas unidades em Marabá: Unidade Novo Horizonte e Unidade Nova Marabá, no Shopping Verdes Mares.",
   },
 ]
 
-export const partnerDentistMessage =
-  "Olá! Sou dentista e quero ser parceiro da RX Digital para indicar meus pacientes."
+export const panoramicaRegionalDescription =
+  "A RX Digital é referência em raio x panorâmico para pacientes e dentistas de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe vai organizar seu atendimento com agilidade."
 
-export const partnerDentistWhatsappLink = `https://wa.me/5594991608181?text=${encodeURIComponent(partnerDentistMessage)}`
+export const panoramicaPartnerText =
+  "Oferecemos atendimento prioritário para clínicas parceiras, com entrega do arquivo digital pelo WhatsApp no mesmo dia. O raio x panorâmico da RX Digital é a base para documentações ortodônticas, planejamentos de implantes e avaliações de rotina dos seus pacientes."
