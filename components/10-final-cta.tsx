@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
 
 type FinalCTAProps = {
@@ -41,10 +40,9 @@ export function FinalCTA({
               onClick={openModal}
               variant="ctaOnGreen"
               size="xl"
-              className="gap-3 text-lg font-bold [&_svg]:!size-6 w-full sm:w-auto"
+              className="w-full text-lg font-bold sm:w-auto"
             >
-              <WhatsAppIcon className="text-[#25D366]" />
-              Agendar pelo WhatsApp
+              Agendar Agora
             </Button>
             {secondaryHref && secondaryLabel ? (
               <Button

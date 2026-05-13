@@ -4,7 +4,6 @@ import Image from "next/image"
 import type { StaticImageData } from "next/image"
 import { Cpu, Clock, MessageCircle, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
 import { cn } from "@/lib/utils"
 
@@ -72,10 +71,9 @@ export function ServiceHero({
                 onClick={openModal}
                 variant="whatsapp"
                 size="xl"
-                className="gap-3 text-lg font-semibold shadow-xl [&_svg]:!size-6"
+                className="text-lg font-semibold shadow-xl"
               >
-                <WhatsAppIcon />
-                Agendar pelo WhatsApp
+                Agendar Agora
               </Button>
             </div>
 

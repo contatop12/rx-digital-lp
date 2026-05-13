@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
 
 export function About() {
@@ -76,14 +75,8 @@ export function About() {
             </div>
 
             <div className="pt-4">
-              <Button
-                onClick={openModal}
-                variant="whatsapp"
-                size="lg"
-                className="gap-2 [&_svg]:size-5!"
-              >
-                <WhatsAppIcon />
-                Falar com a equipe e agendar
+              <Button onClick={openModal} variant="whatsapp" size="lg">
+                Agendar Agora
               </Button>
             </div>
           </div>

@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { MapPin, Star, Cpu, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { WhatsAppIcon } from "@/components/icons"
 import { useLeadModal } from "./13-lead-modal"
 import heroBackground from "@/public/radiologia-odontologica-maraba.jpg"
 
@@ -60,10 +59,9 @@ export function Hero() {
                 onClick={openModal}
                 variant="whatsapp"
                 size="xl"
-                className="gap-3 text-lg font-semibold shadow-xl [&_svg]:!size-6"
+                className="text-lg font-semibold shadow-xl"
               >
-                <WhatsAppIcon />
-                Agendar pelo WhatsApp
+                Agendar Agora
               </Button>
             </div>
             
