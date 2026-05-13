@@ -16,42 +16,42 @@ const defaultFaqs: FAQItem[] = [
   {
     question: "Preciso de pedido do dentista?",
     answer:
-      "Sim, para a maioria dos exames é necessário o pedido (requisição) do seu dentista. Isso garante que o exame correto seja realizado e que o laudo seja direcionado para o profissional responsável pelo seu tratamento. Em casos de dúvida, entre em contato conosco pelo WhatsApp.",
+      "Depende do exame. A tomografia dentária e a documentação ortodôntica geralmente exigem pedido do dentista. O raio x panorâmico e a radiografia periapical podem ser solicitados diretamente pelo paciente. Se tiver dúvidas, preencha o formulário e nossa equipe vai orientar você.",
   },
   {
     question: "Quanto tempo demora o exame?",
     answer:
-      "Os exames são rápidos e seguros. Uma radiografia panorâmica leva cerca de 5 minutos. A tomografia (Cone Beam) leva de 10 a 15 minutos. A documentação ortodôntica completa pode levar de 20 a 30 minutos, dependendo dos itens solicitados.",
+      "A maioria dos exames dura entre 10 e 30 minutos, dependendo do tipo. O atendimento é com hora marcada, sem filas.",
   },
   {
     question: "Quando fica pronto o laudo?",
     answer:
-      "Na maioria dos casos, o laudo fica pronto no mesmo dia ou em até 24 horas úteis. Para exames mais complexos ou documentações completas, o prazo pode ser de até 48 horas. Casos urgentes podem ser priorizados; fale com nossa equipe para verificar disponibilidade.",
+      "Os resultados são entregues no mesmo dia pelo WhatsApp, em formato digital.",
   },
   {
     question: "Aceita convênio?",
     answer:
-      "Trabalhamos com diversos convênios odontológicos. Entre em contato pelo WhatsApp informando seu convênio para verificarmos a cobertura e procedimentos disponíveis. Também oferecemos condições especiais para pagamento particular.",
+      "No momento, não trabalhamos com convênios. Atendemos de forma particular. Entre em contato para saber os valores.",
   },
   {
     question: "Como recebo os resultados?",
     answer:
-      "Os resultados são entregues de forma 100% digital, através de link seguro por e-mail ou WhatsApp. Você também pode acessar pelo nosso portal online. Se preferir, disponibilizamos impressão física mediante solicitação.",
+      "Todos os arquivos e laudos são enviados pelo WhatsApp no mesmo dia do exame, em formato digital.",
   },
   {
     question: "Atendem pacientes de outras cidades?",
     answer:
-      "Sim! Somos referência em radiologia odontológica e atendemos pacientes de toda a região, incluindo cidades como Parauapebas, Canaã dos Carajás, Tucuruí, Redenção, Xinguara e muitas outras. Nossa localização em Marabá é estratégica para atender o sudeste do Pará.",
+      "Sim. A RX Digital é referência para pacientes e dentistas de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe vai organizar seu atendimento.",
   },
   {
     question: "Os exames são seguros?",
     answer:
-      "Absolutamente. Utilizamos equipamentos modernos com baixa dose de radiação e seguimos todos os protocolos de segurança radiológica. Nossos profissionais são treinados e utilizamos aventais de chumbo e outros equipamentos de proteção quando necessário.",
+      "Sim. Todos os exames seguem os protocolos de segurança estabelecidos pelo Conselho Federal de Odontologia, com equipamentos calibrados e equipe treinada.",
   },
   {
     question: "Posso fazer exame durante a gravidez?",
     answer:
-      "Exames radiológicos durante a gestação devem ser evitados, especialmente no primeiro trimestre. Se houver necessidade urgente, converse com seu dentista e nossa equipe sobre os riscos e benefícios. Sempre informe nossa equipe se houver possibilidade de gravidez.",
+      "Gestantes devem informar a equipe antes do exame. Em alguns casos, o exame pode ser realizado com proteção adequada. A decisão é sempre feita com segurança e orientação da responsável técnica.",
   },
 ]
 
