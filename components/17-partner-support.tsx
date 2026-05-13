@@ -5,6 +5,7 @@ import Link from "next/link"
 import { CheckCircle2, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLeadModal } from "./13-lead-modal"
+import { partnerDeliveryDescription } from "@/lib/delivery-policy"
 import { getServiceHref } from "@/lib/services"
 
 const partnerTags = [
@@ -27,8 +28,7 @@ export function PartnerSupport() {
                 Dentista? Seja parceiro da RX Digital.
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Oferecemos atendimento prioritário para clínicas parceiras, com entrega de laudos e arquivos digitais
-                pelo WhatsApp no mesmo dia. Tomografia Cone Beam,{" "}
+                Oferecemos atendimento prioritário para clínicas parceiras, com {partnerDeliveryDescription}. Tomografia Cone Beam,{" "}
                 <Link href={getServiceHref("scanner-intraoral")} className="text-primary underline-offset-4 hover:underline">
                   scanner intraoral
                 </Link>

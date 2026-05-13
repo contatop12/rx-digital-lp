@@ -2,6 +2,13 @@ import { createElement } from "react"
 import type { Metadata } from "next"
 import type { ServiceLandingContent } from "@/components/25-service-landing"
 import { getServiceHref } from "@/lib/services"
+import {
+  fileAvailableSameDayBadge,
+  fileDeliveryDiferencial,
+  fileDeliveryStep,
+  fileFinalCta,
+  filePartnerDelivery,
+} from "@/lib/delivery-policy"
 
 export const scannerMetadata: Metadata = {
   title: "Scanner Intraoral em Marabá | Modelo Digital 3D | RX Digital",
@@ -20,12 +27,12 @@ export const scannerContent: ServiceLandingContent = {
   slug: "scanner-intraoral",
   heroTitle: "Scanner Intraoral em Marabá",
   heroSubtitle:
-    "Modelo digital 3D da boca com alta precisão, sem moldagem convencional, com entrega do arquivo no mesmo dia pelo WhatsApp.",
+    "Modelo digital 3D da boca com alta precisão, sem moldagem convencional, com acesso online ao arquivo no mesmo dia e envio por e-mail.",
   heroImage: "/exames_e_servicos/Scanner e Entrega Digital.webp",
   heroImageAlt: "Scanner intraoral e entrega digital de modelos 3D na RX Digital em Marabá",
   trustBadges: [
     { icon: "cpu", text: "Captura 100% digital" },
-    { icon: "clock", text: "Arquivo no mesmo dia" },
+    { icon: "clock", text: fileAvailableSameDayBadge },
     { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
     { icon: "shield", text: "Sem moldagem convencional" },
   ],
@@ -76,7 +83,7 @@ export const scannerContent: ServiceLandingContent = {
       },
       {
         label: "Entrega do resultado",
-        values: { convencional: "Modelo físico", scanner: "Arquivo digital no mesmo dia" },
+        values: { convencional: "Modelo físico", scanner: "Acesso online no mesmo dia e envio por e-mail" },
       },
     ],
   },
@@ -124,11 +131,11 @@ export const scannerContent: ServiceLandingContent = {
       title: "Processamento",
       description: "O software monta o modelo 3D e valida a qualidade da digitalização",
     },
-    { title: "Entrega", description: "Arquivo digital enviado pelo WhatsApp no mesmo dia" },
+    { title: "Entrega", description: fileDeliveryStep },
   ],
   diferenciais: [
     "Scanner intraoral com captura digital de alta resolução",
-    "Modelo 3D entregue no mesmo dia pelo WhatsApp",
+    fileDeliveryDiferencial,
     "Experiência mais confortável, sem moldagem com massa",
     "Integração com tomografia, radiografias e impressão 3D na RX Digital",
     "Atendimento com hora marcada nas unidades em Marabá",
@@ -141,7 +148,7 @@ export const scannerContent: ServiceLandingContent = {
   regionalDescription:
     "A RX Digital é referência em scanner intraoral para pacientes e dentistas de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe organiza o atendimento com agilidade.",
   partnerDescription:
-    "Oferecemos atendimento prioritário para clínicas parceiras, com entrega do arquivo digital pelo WhatsApp no mesmo dia. O scanner intraoral da RX Digital acelera próteses, alinhadores e planejamentos que dependem de modelo 3D confiável.",
+    `Oferecemos atendimento prioritário para clínicas parceiras, ${filePartnerDelivery} O scanner intraoral da RX Digital acelera próteses, alinhadores e planejamentos que dependem de modelo 3D confiável.`,
   faqs: [
     {
       question: "O que é o scanner intraoral?",
@@ -165,7 +172,7 @@ export const scannerContent: ServiceLandingContent = {
     },
     {
       question: "Quando fica pronto o arquivo digital?",
-      answer: "O modelo 3D é entregue no mesmo dia pelo WhatsApp, após processamento e validação da captura.",
+      answer: "O modelo 3D fica disponível para acesso online no mesmo dia, com envio por e-mail, após processamento e validação da captura.",
     },
     {
       question: "Para que serve o arquivo gerado?",
@@ -179,6 +186,5 @@ export const scannerContent: ServiceLandingContent = {
     },
   ],
   finalCtaTitle: "Agende seu Scanner Intraoral em Marabá",
-  finalCtaSubtitle:
-    "Modelo digital 3D com entrega no mesmo dia pelo WhatsApp. Nossa equipe entra em contato assim que você preencher o formulário.",
+  finalCtaSubtitle: `${fileFinalCta} Nossa equipe entra em contato assim que você preencher o formulário.`,
 }

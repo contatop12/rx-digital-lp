@@ -1,5 +1,6 @@
 "use client"
 
+import { faqHowReceiveAnswer, faqWhenReadyAnswer } from "@/lib/delivery-policy"
 import {
   Accordion,
   AccordionContent,
@@ -25,8 +26,7 @@ const defaultFaqs: FAQItem[] = [
   },
   {
     question: "Quando fica pronto o laudo?",
-    answer:
-      "Os resultados são entregues no mesmo dia pelo WhatsApp, em formato digital.",
+    answer: faqWhenReadyAnswer,
   },
   {
     question: "Aceita convênio?",
@@ -35,8 +35,7 @@ const defaultFaqs: FAQItem[] = [
   },
   {
     question: "Como recebo os resultados?",
-    answer:
-      "Todos os arquivos e laudos são enviados pelo WhatsApp no mesmo dia do exame, em formato digital.",
+    answer: faqHowReceiveAnswer,
   },
   {
     question: "Atendem pacientes de outras cidades?",

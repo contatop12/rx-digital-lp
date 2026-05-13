@@ -10,6 +10,7 @@ import {
   Shield
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { digitalProcessDescription } from "@/lib/delivery-policy"
 import { getServiceHref } from "@/lib/services"
 
 const reasons = [
@@ -21,7 +22,7 @@ const reasons = [
   {
     icon: Zap,
     title: "Processo 100% digital",
-    description: "Organização e agilidade com entrega de resultados em formato digital, sem perda de tempo.",
+    description: digitalProcessDescription,
   },
   {
     icon: Heart,

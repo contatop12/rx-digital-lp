@@ -5,17 +5,27 @@ import type { ServiceLandingContent } from "@/components/25-service-landing"
 import type { ComparisonColumn, ComparisonRow } from "@/components/20-comparison-table"
 import type { ExamStep } from "@/components/19-exam-stepper"
 import { getServiceHref, services } from "@/lib/services"
+import {
+  diferencialDeliveryWithReport,
+  examDeliveryStep,
+  examDeliveryWithReport,
+  expressReportDiferencial,
+  faqWhenReadyAnswer,
+  finalCtaDeliveryWithReport,
+  imagesAvailableSameDayBadge,
+  partnerDeliveryWithReport,
+} from "@/lib/delivery-policy"
 
 const service = services.find((item) => item.slug === "telerradiografia-tracado-cefalometrico")!
 
 export const telerradiografiaMetadata: Metadata = {
   title: "Cefalometria em Marabá | Telerradiografia e Traçado Cefalométrico | RX Digital",
   description:
-    "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico no mesmo dia. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico. Imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
   openGraph: {
     title: "Cefalometria em Marabá | Telerradiografia e Traçado Cefalométrico | RX Digital",
     description:
-      "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico no mesmo dia. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico. Imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
     type: "website",
     locale: "pt_BR",
   },
@@ -23,7 +33,7 @@ export const telerradiografiaMetadata: Metadata = {
 
 const telerradiografiaTrustBadges: ServiceLandingContent["trustBadges"] = [
   { icon: "cpu", text: "Exame 100% digital" },
-  { icon: "clock", text: "Resultado no mesmo dia" },
+  { icon: "clock", text: imagesAvailableSameDayBadge },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
   { icon: "shield", text: "Indicado por ortodontistas de toda a região" },
 ]
@@ -102,14 +112,16 @@ const telerradiografiaExamSteps: ExamStep[] = [
   },
   {
     title: "Entrega",
-    description: "Arquivo digital com imagem e traçado enviados pelo WhatsApp no mesmo dia",
+    description:
+      "Acesso online à imagem e ao traçado disponível no mesmo dia, com envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional).",
   },
 ]
 
 const telerradiografiaDiferenciais: string[] = [
   "Equipamento digital de última geração com alta resolução",
   "Traçado cefalométrico entregue junto com a imagem",
-  "Resultado entregue no mesmo dia pelo WhatsApp",
+  diferencialDeliveryWithReport,
+  expressReportDiferencial,
   "Sem necessidade de preparo especial",
   "Atendimento sem filas e com hora marcada",
   "Atendimento humanizado e ágil nas duas unidades em Marabá",
@@ -144,7 +156,7 @@ const telerradiografiaFaqs: ServiceLandingContent["faqs"] = [
   },
   {
     question: "Quando fica pronto o resultado?",
-    answer: "A imagem e o traçado cefalométrico são entregues no mesmo dia pelo WhatsApp.",
+    answer: faqWhenReadyAnswer,
   },
   {
     question: "O arquivo é compatível com qual software?",
@@ -179,7 +191,7 @@ const telerradiografiaAboutContent = createElement(
   createElement(
     "p",
     null,
-    "Na RX Digital, a telerradiografia é realizada com equipamento digital de última geração. O traçado cefalométrico é entregue junto com a imagem, no mesmo dia, pelo WhatsApp.",
+    `Na RX Digital, a telerradiografia é realizada com equipamento digital de última geração. O traçado cefalométrico é entregue junto com a imagem, ${examDeliveryWithReport}.`,
   ),
   createElement(
     "p",
@@ -193,7 +205,7 @@ const telerradiografiaAboutContent = createElement(
       },
       "documentação ortodôntica completa",
     ),
-    ". Na RX Digital, você realiza todos os exames da documentação em um único lugar, com resultado no mesmo dia e entrega pelo WhatsApp.",
+    `. Na RX Digital, você realiza todos os exames da documentação em um único lugar, ${examDeliveryWithReport}.`,
   ),
 )
 
@@ -201,7 +213,7 @@ export const telerradiografiaContent: ServiceLandingContent = {
   slug: service.slug,
   heroTitle: "Cefalometria em Marabá",
   heroSubtitle:
-    "Telerradiografia digital com traçado cefalométrico para análise precisa do perfil facial e planejamento ortodôntico e cirúrgico. Resultado no mesmo dia.",
+    "Telerradiografia digital com traçado cefalométrico para análise precisa do perfil facial e planejamento ortodôntico e cirúrgico. Imagens disponíveis para acesso online no mesmo dia.",
   heroImage: service.image,
   heroImageAlt: "Telerradiografia com traçado cefalométrico na RX Digital em Marabá",
   trustBadges: telerradiografiaTrustBadges,
@@ -221,9 +233,9 @@ export const telerradiografiaContent: ServiceLandingContent = {
   regionalDescription:
     "A RX Digital atende pacientes e clínicas parceiras de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade para realizar sua cefalometria, preencha o formulário e nossa equipe vai organizar seu atendimento com agilidade.",
   partnerDescription:
-    "Oferecemos atendimento prioritário para clínicas parceiras, com entrega da telerradiografia e do traçado cefalométrico pelo WhatsApp no mesmo dia. Compatível com os principais softwares de planejamento ortodôntico e cirúrgico.",
+    `Oferecemos atendimento prioritário para clínicas parceiras, com acesso online à telerradiografia e ao traçado cefalométrico no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional). Compatível com os principais softwares de planejamento ortodôntico e cirúrgico.`,
   faqs: telerradiografiaFaqs,
   finalCtaTitle: "Agende sua Cefalometria em Marabá",
   finalCtaSubtitle:
-    "Telerradiografia com traçado cefalométrico, resultado no mesmo dia e entrega pelo WhatsApp. Nossa equipe entra em contato assim que você preencher o formulário.",
+    `Telerradiografia com traçado cefalométrico, com acesso online às imagens no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional). Nossa equipe entra em contato assim que você preencher o formulário.`,
 }

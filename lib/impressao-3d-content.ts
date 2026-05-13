@@ -20,7 +20,7 @@ export const impressaoContent: ServiceLandingContent = {
   slug: "impressao-3d-odontologica",
   heroTitle: "Impressão 3D Odontológica em Marabá",
   heroSubtitle:
-    "Biomodelos anatômicos e guias cirúrgicos impressos em 3D com alta precisão, integrados à tomografia e ao scanner intraoral da RX Digital.",
+    "Biomodelos anatômicos e guias cirúrgicos impressos em 3D com alta precisão, feitos a partir de tomografia computadorizada e planejamento 3D.",
   heroImage: "/exames_e_servicos/Arquivos 3D e Impressão 3D.webp",
   heroImageAlt: "Arquivos 3D e impressão odontológica na RX Digital em Marabá",
   trustBadges: [

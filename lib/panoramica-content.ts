@@ -1,12 +1,22 @@
 import type { ExamStep } from "@/components/19-exam-stepper"
 import type { ComparisonColumn, ComparisonRow } from "@/components/20-comparison-table"
+import {
+  diferencialDeliveryWithReport,
+  examDeliveryStep,
+  examDeliveryWithReport,
+  expressReportDiferencial,
+  faqWhenReadyAnswer,
+  finalCtaDeliveryWithReport,
+  imagesAvailableSameDayBadge,
+  partnerDeliveryWithReport,
+} from "@/lib/delivery-policy"
 import { getServiceHref } from "@/lib/services"
 
 export type PanoramicaTrustIcon = "cpu" | "clock" | "messageCircle" | "shield"
 
 export const panoramicaTrustBadges: { icon: PanoramicaTrustIcon; text: string }[] = [
   { icon: "cpu", text: "Exame 100% digital" },
-  { icon: "clock", text: "Resultado no mesmo dia" },
+  { icon: "clock", text: imagesAvailableSameDayBadge },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
   { icon: "shield", text: "Sem necessidade de preparo" },
 ]
@@ -59,12 +69,13 @@ export const panoramicaExamSteps: ExamStep[] = [
     title: "Processamento",
     description: "A imagem digital é gerada automaticamente pelo software do equipamento",
   },
-  { title: "Entrega", description: "Arquivo digital enviado pelo WhatsApp no mesmo dia" },
+  { title: "Entrega", description: examDeliveryStep },
 ]
 
 export const panoramicaDiferenciais: string[] = [
   "Equipamento digital de última geração com alta resolução",
-  "Resultado entregue no mesmo dia pelo WhatsApp",
+  diferencialDeliveryWithReport,
+  expressReportDiferencial,
   "Sem necessidade de preparo especial",
   "Atendimento sem filas e com hora marcada",
   "Atendimento humanizado e ágil nas duas unidades em Marabá",
@@ -110,7 +121,7 @@ export const panoramicaFaqs: { question: string; answer: string }[] = [
   },
   {
     question: "Quando fica pronto o resultado?",
-    answer: "O arquivo digital é entregue no mesmo dia pelo WhatsApp.",
+    answer: faqWhenReadyAnswer,
   },
   {
     question: "Preciso de algum preparo antes do exame?",
@@ -128,4 +139,11 @@ export const panoramicaRegionalDescription =
   "A RX Digital é referência em raio x panorâmico para pacientes e dentistas de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe vai organizar seu atendimento com agilidade."
 
 export const panoramicaPartnerText =
-  "Oferecemos atendimento prioritário para clínicas parceiras, com entrega do arquivo digital pelo WhatsApp no mesmo dia. O raio x panorâmico da RX Digital é a base para documentações ortodônticas, planejamentos de implantes e avaliações de rotina dos seus pacientes."
+  `Oferecemos atendimento prioritário para clínicas parceiras, ${partnerDeliveryWithReport}. O raio x panorâmico da RX Digital é a base para documentações ortodônticas, planejamentos de implantes e avaliações de rotina dos seus pacientes.`
+
+export const panoramicaHeroSubtitle =
+  "Radiografia panorâmica digital com visão completa da arcada dentária, com acesso online às imagens no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional)."
+
+export const panoramicaAboutDelivery = `Na RX Digital, o raio x panorâmico é realizado com equipamento digital de última geração, ${examDeliveryWithReport}.`
+
+export const panoramicaFinalCtaSubtitle = `${finalCtaDeliveryWithReport} Nossa equipe entra em contato assim que você preencher o formulário.`

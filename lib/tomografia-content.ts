@@ -4,15 +4,24 @@ import type { ServiceLandingContent } from "@/components/25-service-landing"
 import type { ExamStep } from "@/components/19-exam-stepper"
 import type { ComparisonColumn, ComparisonRow } from "@/components/20-comparison-table"
 import type { FAQItem } from "@/components/09-faq"
+import {
+  diferencialDeliveryWithReport,
+  examDeliveryStep,
+  examDeliveryWithReport,
+  expressReportDiferencial,
+  faqWhenReadyAnswer,
+  finalCtaDeliveryWithReport,
+  imagesAvailableSameDayBadge,
+} from "@/lib/delivery-policy"
 
 export const tomografiaMetadata: Metadata = {
   title: "Tomografia Dentária em Marabá | Cone Beam e CBCT | RX Digital",
   description:
-    "Faça sua tomografia dentária em Marabá com resultado no mesmo dia. Equipamento Cone Beam de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Faça sua tomografia dentária em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento Cone Beam nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
   openGraph: {
     title: "Tomografia Dentária em Marabá | Cone Beam e CBCT | RX Digital",
     description:
-      "Faça sua tomografia dentária em Marabá com resultado no mesmo dia. Equipamento Cone Beam de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Faça sua tomografia dentária em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento Cone Beam nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
     type: "website",
     locale: "pt_BR",
   },
@@ -20,7 +29,7 @@ export const tomografiaMetadata: Metadata = {
 
 const tomografiaTrustBadges: ServiceLandingContent["trustBadges"] = [
   { icon: "cpu", text: "Imagem 3D de alta resolução" },
-  { icon: "clock", text: "Resultado no mesmo dia" },
+  { icon: "clock", text: imagesAvailableSameDayBadge },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
   { icon: "shield", text: "Indicado por dentistas de toda a região" },
 ]
@@ -94,15 +103,15 @@ const tomografiaExamSteps: ExamStep[] = [
   },
   {
     title: "Entrega",
-    description: "Arquivo digital enviado pelo WhatsApp no mesmo dia, com laudo quando solicitado",
+    description: examDeliveryStep,
   },
 ]
 
 const tomografiaDiferenciais: string[] = [
   "Equipamento Cone Beam de última geração com alta resolução",
   "Imagens 3D com cortes milimétricos para diagnósticos precisos",
-  "Resultado entregue no mesmo dia pelo WhatsApp",
-  "Laudo disponível mediante solicitação",
+  diferencialDeliveryWithReport,
+  expressReportDiferencial,
   "Atendimento humanizado e ágil nas duas unidades em Marabá",
   "Referência para dentistas de mais de 20 cidades da região",
   "Integração com os demais exames da RX Digital para documentação completa",
@@ -136,7 +145,7 @@ const tomografiaFaqs: FAQItem[] = [
   },
   {
     question: "Quando fica pronto o resultado?",
-    answer: "O arquivo digital é entregue no mesmo dia pelo WhatsApp. O laudo, quando solicitado, pode ter prazo adicional.",
+    answer: faqWhenReadyAnswer,
   },
   {
     question: "O arquivo é compatível com qual software?",
@@ -172,7 +181,7 @@ const tomografiaAboutContent = createElement(
   createElement(
     "p",
     null,
-    "Na RX Digital, o exame é realizado com equipamento Cone Beam de última geração, com entrega do resultado no mesmo dia pelo WhatsApp.",
+    `Na RX Digital, o exame é realizado com equipamento Cone Beam de última geração, ${examDeliveryWithReport}.`,
   ),
 )
 
@@ -201,5 +210,5 @@ export const tomografiaContent: ServiceLandingContent = {
   faqs: tomografiaFaqs,
   finalCtaTitle: "Agende sua Tomografia Dentária em Marabá",
   finalCtaSubtitle:
-    "Imagens 3D de alta resolução com resultado no mesmo dia. Nossa equipe entra em contato pelo WhatsApp assim que você preencher o formulário.",
+    `Imagens 3D de alta resolução com acesso online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional). Nossa equipe entra em contato assim que você preencher o formulário.`,
 }

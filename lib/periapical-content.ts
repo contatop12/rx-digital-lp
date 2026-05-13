@@ -5,16 +5,26 @@ import type { ServiceLandingContent } from "@/components/25-service-landing"
 import type { ExamStep } from "@/components/19-exam-stepper"
 import type { ComparisonColumn, ComparisonRow } from "@/components/20-comparison-table"
 import type { FAQItem } from "@/components/09-faq"
+import {
+  diferencialDeliveryWithReport,
+  examDeliveryStep,
+  examDeliveryWithReport,
+  expressReportDiferencial,
+  faqWhenReadyAnswer,
+  finalCtaDeliveryWithReport,
+  imagesAvailableSameDayBadge,
+  partnerDeliveryWithReport,
+} from "@/lib/delivery-policy"
 import { getServiceHref } from "@/lib/services"
 
 export const periapicalMetadata: Metadata = {
   title: "Raio X Periapical em Marabá | Radiografia Periapical | RX Digital",
   description:
-    "Faça seu raio x periapical em Marabá com resultado no mesmo dia. Equipamento digital de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Faça seu raio x periapical em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
   openGraph: {
     title: "Raio X Periapical em Marabá | Radiografia Periapical | RX Digital",
     description:
-      "Faça seu raio x periapical em Marabá com resultado no mesmo dia. Equipamento digital de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Faça seu raio x periapical em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
     type: "website",
     locale: "pt_BR",
   },
@@ -22,7 +32,7 @@ export const periapicalMetadata: Metadata = {
 
 const periapicalTrustBadges: ServiceLandingContent["trustBadges"] = [
   { icon: "cpu", text: "Exame 100% digital" },
-  { icon: "clock", text: "Resultado no mesmo dia" },
+  { icon: "clock", text: imagesAvailableSameDayBadge },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
   { icon: "shield", text: "Sem necessidade de preparo" },
 ]
@@ -91,12 +101,13 @@ const periapicalExamSteps: ExamStep[] = [
     title: "Processamento",
     description: "A imagem digital é gerada automaticamente pelo software do equipamento",
   },
-  { title: "Entrega", description: "Arquivo digital enviado pelo WhatsApp no mesmo dia" },
+  { title: "Entrega", description: examDeliveryStep },
 ]
 
 const periapicalDiferenciais: string[] = [
   "Equipamento digital de última geração com alta resolução",
-  "Resultado entregue no mesmo dia pelo WhatsApp",
+  diferencialDeliveryWithReport,
+  expressReportDiferencial,
   "Sem necessidade de preparo especial",
   "Atendimento sem filas e com hora marcada",
   "Atendimento humanizado e ágil nas duas unidades em Marabá",
@@ -132,7 +143,7 @@ const periapicalFaqs: FAQItem[] = [
   },
   {
     question: "Quando fica pronto o resultado?",
-    answer: "O arquivo digital é entregue no mesmo dia pelo WhatsApp.",
+    answer: faqWhenReadyAnswer,
   },
   {
     question: "Preciso de algum preparo antes do exame?",
@@ -149,7 +160,7 @@ const periapicalRegionalDescription =
   "A RX Digital atende pacientes e clínicas parceiras de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe vai organizar seu atendimento com agilidade."
 
 const periapicalPartnerDescription =
-  "Oferecemos atendimento prioritário para clínicas parceiras, com entrega do arquivo digital pelo WhatsApp no mesmo dia. O raio x periapical da RX Digital é ideal para acompanhamento de tratamentos de canal, diagnósticos localizados e controle pós-cirúrgico dos seus pacientes."
+  `Oferecemos atendimento prioritário para clínicas parceiras, ${partnerDeliveryWithReport}. O raio x periapical da RX Digital é ideal para acompanhamento de tratamentos de canal, diagnósticos localizados e controle pós-cirúrgico dos seus pacientes.`
 
 const periapicalAboutContent = createElement(
   Fragment,
@@ -176,7 +187,7 @@ const periapicalAboutContent = createElement(
   createElement(
     "p",
     null,
-    "Na RX Digital, o exame é realizado com equipamento digital de última geração, com entrega do resultado no mesmo dia pelo WhatsApp.",
+    `Na RX Digital, o exame é realizado com equipamento digital de última geração, ${examDeliveryWithReport}.`,
   ),
 )
 
@@ -184,7 +195,7 @@ export const periapicalContent: ServiceLandingContent = {
   slug: "radiografia-periapical",
   heroTitle: "Raio X Periapical em Marabá",
   heroSubtitle:
-    "Radiografia periapical digital com imagem detalhada de dentes e raízes para diagnósticos precisos e localizados. Resultado no mesmo dia.",
+    "Radiografia periapical digital com imagem detalhada de dentes e raízes para diagnósticos precisos e localizados. Imagens disponíveis online no mesmo dia.",
   heroImage: "/exames_e_servicos/Radiografia Panorâmica (Raio x).webp",
   heroImageAlt: "Equipamento para radiografia periapical na RX Digital em Marabá",
   trustBadges: periapicalTrustBadges,
@@ -204,6 +215,5 @@ export const periapicalContent: ServiceLandingContent = {
   partnerDescription: periapicalPartnerDescription,
   faqs: periapicalFaqs,
   finalCtaTitle: "Agende seu Raio X Periapical em Marabá",
-  finalCtaSubtitle:
-    "Resultado no mesmo dia, entregue pelo WhatsApp. Nossa equipe entra em contato assim que você preencher o formulário.",
+  finalCtaSubtitle: `${finalCtaDeliveryWithReport} Nossa equipe entra em contato assim que você preencher o formulário.`,
 }

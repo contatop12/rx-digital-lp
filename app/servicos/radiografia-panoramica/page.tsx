@@ -20,6 +20,9 @@ import {
   panoramicaExamSteps,
   panoramicaFaqs,
   panoramicaIndications,
+  panoramicaAboutDelivery,
+  panoramicaFinalCtaSubtitle,
+  panoramicaHeroSubtitle,
   panoramicaPartnerText,
   panoramicaRegionalDescription,
   panoramicaTrustBadges,
@@ -28,11 +31,11 @@ import {
 export const metadata: Metadata = {
   title: "Raio X Panorâmico em Marabá | Radiografia Panorâmica | RX Digital",
   description:
-    "Faça seu raio x panorâmico em Marabá com resultado no mesmo dia. Equipamento digital de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Faça seu raio x panorâmico em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
   openGraph: {
     title: "Raio X Panorâmico em Marabá | Radiografia Panorâmica | RX Digital",
     description:
-      "Faça seu raio x panorâmico em Marabá com resultado no mesmo dia. Equipamento digital de última geração nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Faça seu raio x panorâmico em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
     type: "website",
     locale: "pt_BR",
   },
@@ -44,7 +47,7 @@ export default function RadiografiaPanoramicaPage() {
       <Header />
       <ServiceHero
         title="Raio X Panorâmico em Marabá"
-        subtitle="Radiografia panorâmica digital com visão completa da arcada dentária, resultado no mesmo dia e entrega pelo WhatsApp."
+        subtitle={panoramicaHeroSubtitle}
         backgroundImage="/exames_e_servicos/radiografia-panoramica-maraba.webp"
         backgroundAlt="Equipamento e ambiente para radiografia panorâmica na RX Digital em Marabá"
         trustBadges={panoramicaTrustBadges}
@@ -64,10 +67,7 @@ export default function RadiografiaPanoramicaPage() {
                 É o exame mais solicitado na odontologia, indicado para avaliações de rotina, planejamento de
                 tratamentos, acompanhamento ortodôntico e muito mais.
               </p>
-              <p>
-                Na RX Digital, o raio x panorâmico é realizado com equipamento digital de última geração, com entrega do
-                resultado no mesmo dia pelo WhatsApp.
-              </p>
+              <p>{panoramicaAboutDelivery}</p>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function RadiografiaPanoramicaPage() {
       <OutrosServicos currentSlug="radiografia-panoramica" />
       <FinalCTA
         title="Agende seu Raio X Panorâmico em Marabá"
-        subtitle="Resultado no mesmo dia, entregue pelo WhatsApp. Nossa equipe entra em contato assim que você preencher o formulário."
+        subtitle={panoramicaFinalCtaSubtitle}
         secondaryHref="/#servicos"
         secondaryLabel="Ver todos os serviços"
       />

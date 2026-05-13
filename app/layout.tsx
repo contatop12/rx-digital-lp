@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { homeMetaDescription } from '@/lib/delivery-policy'
 import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LeadModalProvider } from '@/components/13-lead-modal'
@@ -12,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Radiologia Odontológica em Marabá | RX Digital',
-  description: 'Tomografia dentária, raio x panorâmico, documentação ortodôntica e scanner intraoral em Marabá. Resultado no mesmo dia e entrega pelo WhatsApp. Agende agora.',
+  description: homeMetaDescription,
   keywords: 'radiologia odontológica, tomografia cone beam, raio x dental, documentação ortodôntica, marabá, pará',
   generator: 'v0.app',
   icons: {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Radiologia Odontológica em Marabá | RX Digital',
-    description: 'Tomografia dentária, raio x panorâmico, scanner intraoral e documentação ortodôntica com agilidade, tecnologia e atendimento humanizado em Marabá.',
+    description: homeMetaDescription,
     type: 'website',
     locale: 'pt_BR',
   },

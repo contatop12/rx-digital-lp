@@ -4,17 +4,26 @@ import Link from "next/link"
 import type { ServiceLandingContent } from "@/components/25-service-landing"
 import type { ExamStep } from "@/components/19-exam-stepper"
 import { getServiceHref, services } from "@/lib/services"
+import {
+  diferencialDeliveryWithReport,
+  examDeliveryStep,
+  examDeliveryWithReport,
+  expressReportDiferencial,
+  finalCtaDeliveryWithReport,
+  imagesAvailableSameDayBadge,
+  partnerDeliveryWithReport,
+} from "@/lib/delivery-policy"
 
 const service = services.find((item) => item.slug === "documentacao-ortodontica")!
 
 export const documentacaoMetadata: Metadata = {
   title: "Documentação Ortodôntica em Marabá | RX Digital",
   description:
-    "Faça sua documentação ortodôntica completa em Marabá com resultado no mesmo dia. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
+    "Faça sua documentação ortodôntica completa em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
   openGraph: {
     title: "Documentação Ortodôntica em Marabá | RX Digital",
     description:
-      "Faça sua documentação ortodôntica completa em Marabá com resultado no mesmo dia. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
+      "Faça sua documentação ortodôntica completa em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
     type: "website",
     locale: "pt_BR",
   },
@@ -22,7 +31,7 @@ export const documentacaoMetadata: Metadata = {
 
 const documentacaoTrustBadges: ServiceLandingContent["trustBadges"] = [
   { icon: "cpu", text: "Exame 100% digital" },
-  { icon: "clock", text: "Resultado no mesmo dia" },
+  { icon: "clock", text: imagesAvailableSameDayBadge },
   { icon: "messageCircle", text: "Avaliação 5.0 no Google" },
   { icon: "shield", text: "Todos os exames em um único lugar" },
 ]
@@ -70,12 +79,13 @@ const documentacaoExamSteps: ExamStep[] = [
     title: "Processamento",
     description: "Geração das imagens digitais e do traçado cefalométrico",
   },
-  { title: "Entrega", description: "Todos os arquivos enviados pelo WhatsApp no mesmo dia" },
+  { title: "Entrega", description: examDeliveryStep },
 ]
 
 const documentacaoDiferenciais: string[] = [
   "Todos os exames da documentação em um único atendimento",
-  "Resultado entregue no mesmo dia pelo WhatsApp",
+  diferencialDeliveryWithReport,
+  expressReportDiferencial,
   "Equipamento digital de última geração com alta resolução",
   "Sem necessidade de preparo especial",
   "Atendimento sem filas e com hora marcada",
@@ -97,7 +107,7 @@ const documentacaoFaqs: ServiceLandingContent["faqs"] = [
   {
     question: "Consigo fazer todos os exames no mesmo dia?",
     answer:
-      "Sim. Na RX Digital, todos os exames da documentação ortodôntica são realizados no mesmo atendimento, com resultado entregue no mesmo dia pelo WhatsApp.",
+      "Sim. Na RX Digital, todos os exames da documentação ortodôntica são realizados no mesmo atendimento, com acesso online às imagens no mesmo dia, envio por e-mail e laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional).",
   },
   {
     question: "Quanto tempo dura o atendimento?",
@@ -153,7 +163,7 @@ const documentacaoAboutContent = createElement(
   createElement(
     "p",
     null,
-    "Na RX Digital, você realiza toda a documentação ortodôntica em um único lugar, com resultado no mesmo dia e entrega pelo WhatsApp.",
+    `Na RX Digital, você realiza toda a documentação ortodôntica em um único lugar, ${examDeliveryWithReport}.`,
   ),
   createElement("p", { className: "font-semibold text-foreground" }, "O que está incluído na documentação:"),
   createElement(
@@ -198,7 +208,7 @@ export const documentacaoContent: ServiceLandingContent = {
   slug: service.slug,
   heroTitle: "Documentação Ortodôntica Completa em Marabá",
   heroSubtitle:
-    "Todos os exames de imagem para o planejamento ortodôntico em um único lugar. Resultado no mesmo dia e entrega pelo WhatsApp.",
+    "Todos os exames de imagem para o planejamento ortodôntico em um único lugar. Imagens disponíveis para acesso online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional).",
   heroImage: service.image,
   heroImageAlt: "Documentação ortodôntica completa na RX Digital em Marabá",
   trustBadges: documentacaoTrustBadges,
@@ -214,9 +224,9 @@ export const documentacaoContent: ServiceLandingContent = {
   regionalDescription:
     "A RX Digital é referência em documentação ortodôntica para pacientes e ortodontistas de mais de 20 cidades do Pará e Maranhão. Se você vem de outra cidade, preencha o formulário e nossa equipe vai organizar seu atendimento com agilidade.",
   partnerDescription:
-    "Oferecemos atendimento prioritário para clínicas parceiras, com entrega de toda a documentação ortodôntica pelo WhatsApp no mesmo dia. Arquivos compatíveis com os principais softwares de planejamento ortodôntico.",
+    `Oferecemos atendimento prioritário para clínicas parceiras, ${partnerDeliveryWithReport}. Arquivos compatíveis com os principais softwares de planejamento ortodôntico.`,
   faqs: documentacaoFaqs,
   finalCtaTitle: "Agende sua Documentação Ortodôntica em Marabá",
   finalCtaSubtitle:
-    "Todos os exames em um único atendimento, resultado no mesmo dia e entrega pelo WhatsApp. Nossa equipe entra em contato assim que você preencher o formulário.",
+    `Todos os exames em um único atendimento, com acesso online às imagens no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis, ou em até 12h com laudo expresso (taxa adicional). Nossa equipe entra em contato assim que você preencher o formulário.`,
 }
