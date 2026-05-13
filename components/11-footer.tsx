@@ -3,7 +3,15 @@
 import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Instagram } from "lucide-react"
+import { usePathname } from "next/navigation"
 import { WhatsAppIcon } from "@/components/icons"
+
+function resolveFooterHref(href: string, pathname: string | null) {
+  if (pathname && pathname !== "/" && href.startsWith("#")) {
+    return `/${href}`
+  }
+  return href
+}
 
 const units = [
   {
@@ -45,6 +53,8 @@ const mapUnits = [
 ]
 
 export function Footer() {
+  const pathname = usePathname()
+
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12">
@@ -140,19 +150,19 @@ export function Footer() {
           <div className="lg:col-span-1">
             <h3 className="font-semibold text-background mb-4">Links Rápidos</h3>
             <nav className="space-y-2">
-              <Link href="#servicos" className="block text-sm text-background/70 hover:text-white transition-colors">
+              <Link href={resolveFooterHref("#servicos", pathname)} className="block text-sm text-background/70 hover:text-white transition-colors">
                 Serviços
               </Link>
-              <Link href="#avaliacoes" className="block text-sm text-background/70 hover:text-white transition-colors">
+              <Link href={resolveFooterHref("#avaliacoes", pathname)} className="block text-sm text-background/70 hover:text-white transition-colors">
                 Avaliações
               </Link>
-              <Link href="#unidades" className="block text-sm text-background/70 hover:text-white transition-colors">
+              <Link href={resolveFooterHref("#unidades", pathname)} className="block text-sm text-background/70 hover:text-white transition-colors">
                 Unidades
               </Link>
-              <Link href="#dra-jessica" className="block text-sm text-background/70 hover:text-white transition-colors">
+              <Link href={resolveFooterHref("#dra-jessica", pathname)} className="block text-sm text-background/70 hover:text-white transition-colors">
                 Dra. Jéssica
               </Link>
-              <Link href="#faq" className="block text-sm text-background/70 hover:text-white transition-colors">
+              <Link href={resolveFooterHref("#faq", pathname)} className="block text-sm text-background/70 hover:text-white transition-colors">
                 FAQ
               </Link>
             </nav>
