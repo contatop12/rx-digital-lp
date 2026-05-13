@@ -50,7 +50,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Exames digitais, tomografia (Cone Beam) e documentação ortodôntica com agilidade, tecnologia e atendimento humanizado.
+              Tomografia dentária, raio x panorâmico, scanner intraoral e documentação ortodôntica com agilidade, tecnologia e atendimento humanizado em Marabá.
             </p>
 
             {/* CTA Button */}

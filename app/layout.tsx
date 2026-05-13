@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'RX Digital - Radiologia Odontológica | Marabá - PA',
-  description: 'Radiologia odontológica com alta precisão em Marabá e região. Tomografia Cone Beam, radiografias digitais e documentação ortodôntica com tecnologia de ponta e atendimento humanizado.',
+  title: 'Radiologia Odontológica em Marabá | RX Digital',
+  description: 'Tomografia dentária, raio x panorâmico, documentação ortodôntica e scanner intraoral em Marabá. Resultado no mesmo dia e entrega pelo WhatsApp. Agende agora.',
   keywords: 'radiologia odontológica, tomografia cone beam, raio x dental, documentação ortodôntica, marabá, pará',
   generator: 'v0.app',
   icons: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-yiAXINo4xAlQ44byTQMyGhrztsVa2h.png',
   },
   openGraph: {
-    title: 'RX Digital - Radiologia Odontológica | Marabá - PA',
-    description: 'Exames digitais, tomografia (Cone Beam) e documentação ortodôntica com agilidade, tecnologia e atendimento humanizado.',
+    title: 'Radiologia Odontológica em Marabá | RX Digital',
+    description: 'Tomografia dentária, raio x panorâmico, scanner intraoral e documentação ortodôntica com agilidade, tecnologia e atendimento humanizado em Marabá.',
     type: 'website',
     locale: 'pt_BR',
   },
