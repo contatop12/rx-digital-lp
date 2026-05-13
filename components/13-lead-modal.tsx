@@ -18,7 +18,6 @@ const LeadModalContext = createContext<LeadModalContextType | null>(null)
 const LEAD_API_ENDPOINT = "/api/lead"
 const WEBHOOK_URLS = [
   "https://n8n-webhook.axmxa0.easypanel.host/webhook/rx-digital-lp",
-  "https://python-auto-relatorio-trafego.axmxa0.easypanel.host/site-new-lead",
 ]
 const DEFAULT_DDI = "55"
 const FORM_ID = "Rx Digital"
