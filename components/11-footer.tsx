@@ -93,7 +93,7 @@ export function Footer() {
               <div>
                 <p className="mb-1 flex items-center gap-2 text-xs text-background/50">
                   <span>Novo Horizonte</span>
-                  <span>Disponivel Turmografia</span>
+                  <span>Disponível Tomografia</span>
                 </p>
                 <a 
                   href={contactWhatsAppLinks.novoHorizonte}
