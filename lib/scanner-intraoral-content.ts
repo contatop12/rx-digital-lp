@@ -11,13 +11,13 @@ import {
 } from "@/lib/delivery-policy"
 
 export const scannerMetadata: Metadata = {
-  title: "Scanner Intraoral em Marabá | Modelo Digital 3D | RX Digital",
+  title: "Scanner Intraoral em Marabá | RX Digital",
   description:
-    "Scanner intraoral em Marabá com modelo digital 3D da boca, sem moldagem convencional. Alta precisão para próteses, alinhadores e implantes. Agende na RX Digital.",
+    "Modelo digital 3D da boca sem moldagem convencional. Indicado para próteses, alinhadores e implantes. Tecnologia de ponta em Marabá-PA.",
   openGraph: {
-    title: "Scanner Intraoral em Marabá | Modelo Digital 3D | RX Digital",
+    title: "Scanner Intraoral em Marabá | RX Digital",
     description:
-      "Scanner intraoral em Marabá com modelo digital 3D da boca, sem moldagem convencional. Alta precisão para próteses, alinhadores e implantes. Agende na RX Digital.",
+      "Modelo digital 3D da boca sem moldagem convencional. Indicado para próteses, alinhadores e implantes. Tecnologia de ponta em Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

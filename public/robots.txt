@@ -1,0 +1,112 @@
+# robots.txt - RX Digital Radiologia Odontológica
+# Atualizado: Maio/2026
+# Site: https://www.rxradiologiaodontologica.com.br
+
+# ── Regras gerais ────────────────────────────────────────────
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /resultados/
+Disallow: /area-do-paciente/
+Disallow: /painel/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /obrigado/
+Disallow: /thank-you/
+Disallow: /*.json$
+Disallow: /api/
+
+# Permite rastreamento de URLs com parâmetros UTM (campanhas Google Ads)
+Allow: /*?utm_source=
+Allow: /*?utm_medium=
+Allow: /*?utm_campaign=
+Allow: /*?utm_content=
+Allow: /*?utm_term=
+
+# Permite acesso geral ao site
+Allow: /
+
+# ── Sitemap ──────────────────────────────────────────────────
+Sitemap: https://www.rxradiologiaodontologica.com.br/sitemap.xml
+
+# ── Googlebot ────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /resultados/
+Disallow: /area-do-paciente/
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bingbot ──────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /resultados/
+
+# ── Bots de IA (GEO - Generative Engine Optimization) ────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /resultados/
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# ── Bots de concorrência e scrapers — Bloqueados ─────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /

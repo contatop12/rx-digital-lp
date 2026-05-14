@@ -19,13 +19,13 @@ import {
 const service = services.find((item) => item.slug === "telerradiografia-tracado-cefalometrico")!
 
 export const telerradiografiaMetadata: Metadata = {
-  title: "Cefalometria em Marabá | Telerradiografia e Traçado Cefalométrico | RX Digital",
+  title: "Telerradiografia e Traçado Cefalométrico em Marabá | RX Digital",
   description:
-    "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico. Imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Análise do perfil facial para planejamento ortodôntico e cirúrgico. Exame digital com traçado cefalométrico incluso. RX Digital, Marabá-PA.",
   openGraph: {
-    title: "Cefalometria em Marabá | Telerradiografia e Traçado Cefalométrico | RX Digital",
+    title: "Telerradiografia e Traçado Cefalométrico em Marabá | RX Digital",
     description:
-      "Faça sua cefalometria em Marabá com telerradiografia digital e traçado cefalométrico. Imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Análise do perfil facial para planejamento ortodôntico e cirúrgico. Exame digital com traçado cefalométrico incluso. RX Digital, Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

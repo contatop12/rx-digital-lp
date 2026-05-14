@@ -28,14 +28,32 @@ import {
   panoramicaTrustBadges,
 } from "@/lib/panoramica-content"
 
-export const metadata: Metadata = {
-  title: "Raio X Panorâmico em Marabá | Radiografia Panorâmica | RX Digital",
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  name: "Raio X Panorâmico",
+  alternateName: ["Radiografia panorâmica", "Rx panorâmica", "Panorâmica odontológica"],
   description:
-    "Faça seu raio x panorâmico em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Exame que captura uma imagem completa da arcada dentária, maxilar e mandíbula em uma única radiografia digital. Indicado para rotina odontológica, planejamento ortodôntico e avaliação pré-operatória. RX Digital, Marabá-PA.",
+  url: "https://www.rxradiologiaodontologica.com.br/servicos/radiografia-panoramica",
+  procedureType: "Diagnostic",
+  bodyLocation: "Arcada Dentária",
+  followup: "Imagem disponível online no mesmo dia do exame.",
+  provider: {
+    "@type": "MedicalBusiness",
+    name: "RX Digital Radiologia Odontológica",
+    url: "https://www.rxradiologiaodontologica.com.br",
+  },
+}
+
+export const metadata: Metadata = {
+  title: "Raio X Panorâmico em Marabá | RX Digital",
+  description:
+    "Radiografia panorâmica digital com alta resolução em Marabá-PA. Resultado no mesmo dia. Indicado para rotina, ortodontia e pré-operatório. Agende pelo WhatsApp.",
   openGraph: {
-    title: "Raio X Panorâmico em Marabá | Radiografia Panorâmica | RX Digital",
+    title: "Raio X Panorâmico em Marabá | RX Digital",
     description:
-      "Faça seu raio x panorâmico em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Radiografia panorâmica digital com alta resolução em Marabá-PA. Resultado no mesmo dia. Indicado para rotina, ortodontia e pré-operatório. Agende pelo WhatsApp.",
     type: "website",
     locale: "pt_BR",
   },
@@ -44,6 +62,10 @@ export const metadata: Metadata = {
 export default function RadiografiaPanoramicaPage() {
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureSchema) }}
+      />
       <Header />
       <ServiceHero
         title="Raio X Panorâmico em Marabá"

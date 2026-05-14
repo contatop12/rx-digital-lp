@@ -18,13 +18,13 @@ import {
 import { getServiceHref } from "@/lib/services"
 
 export const periapicalMetadata: Metadata = {
-  title: "Raio X Periapical em Marabá | Radiografia Periapical | RX Digital",
+  title: "Radiografia Periapical em Marabá | RX Digital",
   description:
-    "Faça seu raio x periapical em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Imagem detalhada de dentes e raízes para diagnósticos localizados. Exame rápido, digital e com resultado no mesmo dia em Marabá-PA.",
   openGraph: {
-    title: "Raio X Periapical em Marabá | Radiografia Periapical | RX Digital",
+    title: "Radiografia Periapical em Marabá | RX Digital",
     description:
-      "Faça seu raio x periapical em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento digital nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Imagem detalhada de dentes e raízes para diagnósticos localizados. Exame rápido, digital e com resultado no mesmo dia em Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

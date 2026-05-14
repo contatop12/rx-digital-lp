@@ -15,13 +15,13 @@ import {
 } from "@/lib/delivery-policy"
 
 export const tomografiaMetadata: Metadata = {
-  title: "Tomografia Dentária em Marabá | Cone Beam e CBCT | RX Digital",
+  title: "Tomografia Dentária Cone Beam em Marabá | RX Digital",
   description:
-    "Faça sua tomografia dentária em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento Cone Beam nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+    "Tomografia 3D de alta precisão para implantes, cirurgias e endodontia. Arquivo DICOM disponível no mesmo dia. Unidade Novo Horizonte, Marabá-PA.",
   openGraph: {
-    title: "Tomografia Dentária em Marabá | Cone Beam e CBCT | RX Digital",
+    title: "Tomografia Dentária Cone Beam em Marabá | RX Digital",
     description:
-      "Faça sua tomografia dentária em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Equipamento Cone Beam nas unidades Novo Horizonte e Nova Marabá. Agende agora.",
+      "Tomografia 3D de alta precisão para implantes, cirurgias e endodontia. Arquivo DICOM disponível no mesmo dia. Unidade Novo Horizonte, Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

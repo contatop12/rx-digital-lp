@@ -17,13 +17,13 @@ import {
 const service = services.find((item) => item.slug === "documentacao-ortodontica")!
 
 export const documentacaoMetadata: Metadata = {
-  title: "Documentação Ortodôntica em Marabá | RX Digital",
+  title: "Documentação Ortodôntica Completa em Marabá | RX Digital",
   description:
-    "Faça sua documentação ortodôntica completa em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
+    "Conjunto completo de imagens para início ou troca de tratamento ortodôntico. Processo digital, rápido e com laudo especializado. Marabá-PA.",
   openGraph: {
-    title: "Documentação Ortodôntica em Marabá | RX Digital",
+    title: "Documentação Ortodôntica Completa em Marabá | RX Digital",
     description:
-      "Faça sua documentação ortodôntica completa em Marabá com imagens online no mesmo dia e envio por e-mail. Laudo em até 3 dias úteis. Raio x panorâmico, telerradiografia e traçado cefalométrico em um único atendimento. Agende agora.",
+      "Conjunto completo de imagens para início ou troca de tratamento ortodôntico. Processo digital, rápido e com laudo especializado. Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

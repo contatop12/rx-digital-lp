@@ -4,13 +4,13 @@ import type { ServiceLandingContent } from "@/components/25-service-landing"
 import { getServiceHref } from "@/lib/services"
 
 export const impressaoMetadata: Metadata = {
-  title: "Impressão 3D Odontológica em Marabá | Biomodelos e Guias | RX Digital",
+  title: "Impressão 3D Odontológica em Marabá | RX Digital",
   description:
-    "Impressão 3D odontológica em Marabá para biomodelos anatômicos e guias cirúrgicos com alta precisão. Integração com tomografia e scanner intraoral na RX Digital.",
+    "Biomodelos anatômicos e guias cirúrgicos impressos em 3D com alta precisão. Solução completa para cirurgiões e implantodontistas em Marabá-PA.",
   openGraph: {
-    title: "Impressão 3D Odontológica em Marabá | Biomodelos e Guias | RX Digital",
+    title: "Impressão 3D Odontológica em Marabá | RX Digital",
     description:
-      "Impressão 3D odontológica em Marabá para biomodelos anatômicos e guias cirúrgicos com alta precisão. Integração com tomografia e scanner intraoral na RX Digital.",
+      "Biomodelos anatômicos e guias cirúrgicos impressos em 3D com alta precisão. Solução completa para cirurgiões e implantodontistas em Marabá-PA.",
     type: "website",
     locale: "pt_BR",
   },

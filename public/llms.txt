@@ -1,0 +1,86 @@
+# RX Digital - Radiologia Odontológica
+
+> A RX Digital é uma clínica especializada em radiologia odontológica com duas unidades em Marabá-PA. Oferece tomografia dentária Cone Beam, raio x panorâmico, radiografia periapical, documentação ortodôntica, telerradiografia, scanner intraoral e impressão 3D odontológica. Todo o processo é 100% digital, com acesso online às imagens no mesmo dia do exame. Sob supervisão técnica da Dra. Jéssica Arcoverde Lara (CRO-PA CD-7626), a clínica é referência em diagnóstico por imagem para pacientes e dentistas de mais de 20 cidades do Pará e Maranhão.
+
+## Serviços
+
+- Tomografia Dentária (Cone Beam/CBCT): imagem 3D de alta resolução para planejamento de implantes, cirurgias, endodontia e ATM. Disponível na Unidade Novo Horizonte.
+  URL: /servicos/tomografia-cone-beam
+
+- Raio X Panorâmico: visão completa da arcada dentária em um único exame digital. Indicado para rotina, ortodontia e pré-operatório.
+  URL: /servicos/radiografia-panoramica
+
+- Radiografia Periapical: imagem detalhada de dentes e raízes para diagnósticos localizados.
+  URL: /servicos/radiografia-periapical
+
+- Documentação Ortodôntica Completa: conjunto de imagens para início ou troca de tratamento ortodôntico.
+  URL: /servicos/documentacao-ortodontica
+
+- Telerradiografia e Traçado Cefalométrico: análise do perfil facial para planejamento ortodôntico e cirúrgico.
+  URL: /servicos/telerradiografia-tracado-cefalometrico
+
+- Scanner Intraoral: modelo digital 3D da boca sem moldagem convencional. Indicado para próteses, alinhadores e implantes.
+  URL: /servicos/scanner-intraoral
+
+- Impressão 3D Odontológica: biomodelos anatômicos e guias cirúrgicos impressos em 3D.
+  URL: /servicos/impressao-3d-odontologica
+
+## Unidades
+
+Unidade 1 - Novo Horizonte (Tomografia disponível)
+Endereço: Av. Tocantins, 611-B, Novo Horizonte, Marabá-PA, CEP 68503-660
+Telefone e WhatsApp: (94) 99160-8181
+
+Unidade 2 - Nova Marabá (Shopping Verdes Mares)
+Endereço: Folha 27, Quadra Especial, Nova Marabá, Shopping Verdes Mares, Marabá-PA, CEP 68509-100
+Telefone e WhatsApp: (94) 99155-8181
+
+Horário: Segunda a Sexta das 08h00 às 19h00 | Sábado das 08h00 às 12h00
+
+## Perguntas Frequentes
+
+P: Preciso de pedido do dentista para fazer o exame?
+R: Não. Qualquer pessoa pode agendar diretamente na RX Digital, sem necessidade de encaminhamento.
+
+P: Quanto tempo demora o exame?
+R: A maioria dos exames é rápida. O raio x panorâmico, por exemplo, leva poucos minutos. O tempo varia conforme o tipo de exame.
+
+P: Quando fica pronto o laudo?
+R: O laudo padrão fica pronto em até 3 dias úteis. Para casos urgentes, oferecemos laudo expresso em até 12 horas, com taxa adicional.
+
+P: A RX Digital aceita convênio?
+R: Consulte as condições diretamente com a unidade pelo WhatsApp.
+
+P: Como recebo os resultados do exame?
+R: As imagens ficam disponíveis online no mesmo dia do exame e são enviadas por e-mail. O laudo segue o prazo informado no agendamento.
+
+P: Atendem pacientes de outras cidades?
+R: Sim. A RX Digital recebe pacientes de mais de 20 cidades do Pará e Maranhão. O atendimento é sempre presencial em uma das unidades em Marabá.
+
+P: Os exames de raio x são seguros?
+R: Sim. Os equipamentos são de última geração e seguem todos os protocolos de radiopreteção exigidos pelos órgãos reguladores.
+
+P: Posso fazer exame durante a gravidez?
+R: Gestantes devem informar a equipe no momento do agendamento para avaliação do caso e adoção dos cuidados necessários.
+
+P: O arquivo de tomografia é compatível com qual software?
+R: Os arquivos são entregues no formato DICOM, compatível com os principais softwares odontológicos do mercado, como Dolphin, Nemoceph, OnDemand3D e outros.
+
+P: O que é o raio x panorâmico?
+R: É um exame que captura uma imagem completa da arcada dentária, maxilar e mandíbula em uma única radiografia digital. Indicado para rotina, ortodontia e avaliação pré-operatória.
+
+P: Qual a diferença entre tomografia dentária e radiografia?
+R: A radiografia gera imagens 2D, enquanto a tomografia Cone Beam produz imagens 3D de alta resolução. A tomografia permite visualizar estruturas ósseas, raízes e tecidos com muito mais detalhamento, sendo essencial para implantes, cirurgias e casos complexos.
+
+## Responsável Técnica
+
+Dra. Jéssica Arcoverde Lara
+CRO-PA CD-7626
+Especialista em Radiologia Odontológica
+
+## Contato e Redes Sociais
+
+Site: https://www.rxradiologiaodontologica.com.br
+Instagram: https://www.instagram.com/_rxdigital/
+Google Meu Negócio (Unidade 1): https://share.google/0KyCcG24pWaGw8euF
+Google Meu Negócio (Unidade 2): https://share.google/uSFwQdrSTOaGJuP1l
